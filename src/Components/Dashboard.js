@@ -199,8 +199,6 @@ function Dashboard() {
         setItemsDepartment([]);
         setItemsLocation([]);
         setItemsProduction([]);
-        setMonthlynetSale("");
-        setPreviousYearMonthnetSale("");
 
         // Blue Box  
 
