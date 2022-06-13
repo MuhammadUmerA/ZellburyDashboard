@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-
 import Chart from "react-apexcharts";
 import { CSVLink } from "react-csv";
 import ReactHTMLTableToExcel from 'react-html-table-to-excel';
-// import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Loader from './Loader'
 
 function Summary({ items, isLoading, previousYearMonthnetSale, monthlynetSale }) {

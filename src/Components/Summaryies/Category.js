@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Chart from "react-apexcharts";
 import { CSVLink } from "react-csv";
 import ReactHTMLTableToExcel from 'react-html-table-to-excel';
-// import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Loader from '../Loader'
 
 function Category({ itemsCategory, isLoading, CategoryValueHook, CategorylabelHook }) {
@@ -263,7 +262,7 @@ function Category({ itemsCategory, isLoading, CategoryValueHook, CategorylabelHo
             </div>
             {/* Chart */}
             <div className='top ' >
-                <p className="text-center h4 ">Location Wise Category Detail Report</p>
+                <p className="text-center h4 ">Category Wise Category Detail Report</p>
 
                 <div className="container-fluid mb-3 mt-5 alig top2" >
                     <Chart
@@ -281,7 +280,28 @@ function Category({ itemsCategory, isLoading, CategoryValueHook, CategorylabelHo
                             labels: CategorylabelHook,
                             legend: {
                                 show: false
-                            }
+                            },
+                            // plotOptions: {
+                            //     pie: {
+
+                            //         dataLabels: {
+                            //             enabled: true,
+                            //             minAngleToShowLabel: 3,
+
+
+
+                            //         }
+                            //     }
+                            // },
+                            dataLabels: {
+                                enabled: true,
+                                style:
+                                    { fontSize: '13px' , color:'#FFFFFF'},
+                                formatter: function (value, opts) {
+                                    return [opts.w.globals.labels[opts.seriesIndex] + '%']
+                                }
+                            },
+
 
                         }}
                     >

@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Chart from "react-apexcharts";
 import { CSVLink } from "react-csv";
 import ReactHTMLTableToExcel from 'react-html-table-to-excel';
-// import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Loader from '../Loader'
 
 
@@ -94,6 +93,7 @@ function Location({ itemsLocation, isLoading, LocationLabelsHook, LocationValueH
 
 
             <div className="dt-buttons btn-group">
+                {/* copy btn */}
                 <button className="btn btn-secondary buttons-copy buttons-html5" tabIndex={0} aria-controls="DataTables_Table_0" onClick={copyTable}><span>Copy</span></button>
                 <CSVLink {...csvReport}>  <button className="btn btn-secondary buttons-csv buttons-html5" tabIndex={0} aria-controls="DataTables_Table_0"><span>CSV</span></button></CSVLink>
 
@@ -213,8 +213,16 @@ function Location({ itemsLocation, isLoading, LocationLabelsHook, LocationValueH
 
                             legend: {
                                 show: false
-                            }
-
+                            },
+                     
+                            dataLabels: {
+                                enabled: true,
+                                style:
+                                    { fontSize: '13px' , color:'#FFFFFF'},
+                                formatter: function (value, opts) {
+                                    return [opts.w.globals.labels[opts.seriesIndex] + '%']
+                                }
+                            },
 
 
                         }}

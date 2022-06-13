@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Chart from "react-apexcharts";
 import { CSVLink } from "react-csv";
 import ReactHTMLTableToExcel from 'react-html-table-to-excel';
-// import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Loader from '../Loader'
 
 
@@ -234,7 +233,7 @@ function Production({ isLoading, itemsProduction, ProductionValueHook, Productio
             </div>
             {/* Chart */}
             <div className='top ' >
-                <p className="text-center h4 ">Location Wise Category Detail Report</p>
+                <p className="text-center h4 ">Production Year Wise Category Detail Report</p>
 
                 <div className="container-fluid mb-3 mt-5 alig top2" >
                     <Chart
@@ -247,25 +246,33 @@ function Production({ isLoading, itemsProduction, ProductionValueHook, Productio
                         options={{
 
                             noData: { text: "Loading...." },
-                            // colors:["#f90000","#f0f"],
+
                             colors: ['#19B28E', '#5E667F', '#FFD72F', '#592975', '#71CC81', '#199AA3'],
                             labels: ProductionlabelHook,
                             legend: {
                                 show: false
                             },
-                            animations: {
+                            // plotOptions: {
+                            //     pie: {
+
+                            //         dataLabels: {
+                            //             enabled: true,
+                            //             minAngleToShowLabel: 3,
+
+
+
+                            //         }
+                            //     }
+                            // },
+                            dataLabels: {
                                 enabled: true,
-                                easing: 'easeinout',
-                                speed: 800,
-                                animateGradually: {
-                                    enabled: true,
-                                    delay: 150
-                                },
-                                dynamicAnimation: {
-                                    enabled: true,
-                                    speed: 350
+                                style:
+                                    { fontSize: '13px' , color:'#FFFFFF'},
+                                formatter: function (value, opts) {
+                                    return [opts.w.globals.labels[opts.seriesIndex] + '%']
                                 }
-                            }
+                            },
+
 
                         }}
 

@@ -23,7 +23,7 @@ function Form() {
     const handleLoginSubmit = (e) => {
         e.preventDefault();
 
-        const getItem = () => {
+        const Login = () => {
             //console.log(emailInput, passwordInput);
 
 
@@ -41,12 +41,8 @@ function Form() {
                     //console.log(data);
                     if (data === 'Login Successfully') {
                         setSuccessMessage('Login Successfully')
-                        const Login = async () => {
-                            navigate('/Dashboard')
-                            // window.location.reload();
 
-                        }
-                        Login()
+                        navigate('/Dashboard')
                     }
                     else {
                         setErrorMessage('Invalid Login.')
@@ -56,12 +52,11 @@ function Form() {
                         setEmailInput('')
                         setPasswordInput('')
                     }
-                    // data === 'Login Successfully' ? navigate('/Dashboard') : setErrorMessage('Example error message!');
-                    // window.location.reload();
+
                 });
 
         }
-        getItem();
+        Login();
 
     }
 

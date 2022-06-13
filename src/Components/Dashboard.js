@@ -94,22 +94,22 @@ function Dashboard() {
     const [ProductionlabelHook, setProductionlabelHook] = useState([]);
 
     // constants for chart 
-    const LocationLabels = [];
-    const LocationValue = [];
+    let LocationLabels = [];
+    let LocationValue = [];
     // Category
-    const Categorylabel = [];
-    const CategoryValue = [];
+    let Categorylabel = [];
+    let CategoryValue = [];
     //coobarnd
-    const CoBrandlabel = [];
-    const CoBrandValue = [];
+    let CoBrandlabel = [];
+    let CoBrandValue = [];
     //DEPARTMENT
-    const Departmentlabel = [];
-    const DepartmentValue = [];
+    let Departmentlabel = [];
+    let DepartmentValue = [];
 
     // PRODUCTION
 
-    const Productionlabel = [];
-    const ProductionValue = [];
+    let Productionlabel = [];
+    let ProductionValue = [];
 
     // Logout
     const navigate = useNavigate();
@@ -182,6 +182,24 @@ function Dashboard() {
         setItemsLocation([]);
         setItemsProduction([]);
 
+        // constants for chart 
+         let LocationLabels = [];
+         let LocationValue = [];
+        // Category
+         let Categorylabel = [];
+         let CategoryValue = [];
+        //coobarnd
+         let CoBrandlabel = [];
+         let CoBrandValue = [];
+        //DEPARTMENT
+         let Departmentlabel = [];
+         let DepartmentValue = [];
+
+        // PRODUCTION
+
+        let Productionlabel = [];
+        let ProductionValue = [];
+
         // Blue Box  
 
 
@@ -221,13 +239,13 @@ function Dashboard() {
         // Location Summary
 
         const getLocationSummary = async () => {
+
             const result = await axios(
                 `https://posapi.gtech.com.pk/api/post/LocationSummary?api=qTpq3bVFho&DateFrom=${MounthDate}&dateTo=${date}&Region=${valRegion}&Location=${valLocation}
                 &Category=${valCategory}&Department=${valDepartment}&CoBrand=${value}&Channel=${valChannel}`
             )
             // console.log(result.data)
 
-            setItemsLocation(result.data)//sets the data to appear 
 
 
             for (let i = 0; i < result.data.length; i++) {
@@ -236,7 +254,8 @@ function Dashboard() {
             }
             setLocationLabelsHook(LocationLabels);
             setLocationValueHook(LocationValue);
-
+            console.log(LocationValueHook);
+            setItemsLocation(result.data)//sets the data to appear 
             setLoading(false) //stop loading when data is fetched
         }
         getLocationSummary()
@@ -327,7 +346,7 @@ function Dashboard() {
             setProductionValueHook(ProductionValue);
             setLoading(false) //stop loading when data is fetched
 
-
+            // console.log(ProductionValue);
         }
         getItemsProductionYear()
     }

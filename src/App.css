@@ -10,7 +10,7 @@ body {
 
 .total-text {
   font-size: 16px;
-  color: #19A0D5;
+  color: yellow;
 }
 
 
@@ -206,7 +206,7 @@ small {
 }
 
 #color {
-  color: #88D2EF !important;
+  color: rgb(29, 29, 155) !important;
   font-weight: bold;
   font-size: 16px !important;
 }
@@ -218,81 +218,6 @@ small {
   }
 
 
-
-  /* Total */
-
-
-  .boxTotal1 {
-    width: 200px;
-    padding-left: 15px;
-  }
-
-  .boxTotal11 {
-    width: 180px;
-    padding-left: 5px;
-  }
-
-  .boxTotal111 {
-    width: 180px;
-    padding-left: 15px;
-  }
-
-  .boxTotal1111 {
-    width: 160px;
-    padding-left: 15px;
-
-  }
-
-  .boxTotal2 {
-    width: 130px;
-    text-align: center;
-  }
-
-  .boxTotal3 {
-    width: 110px;
-    text-align: center;
-
-  }
-
-  .boxTotal22 {
-    width: 131px;
-    text-align: center;
-
-
-  }
-
-  .boxTotal88 {
-    width: 165px;
-    text-align: center;
-
-    margin-left: 5px;
-
-
-
-  }
-
-  .boxTotal4 {
-    width: 100px;
-    text-align: center;
-
-  }
-
-  .boxTotal5 {
-    width: 130px;
-    text-align: center;
-
-  }
-
-  .boxTotal9 {
-    width: 140px;
-    text-align: center;
-  }
-
-  .boxTotal8 {
-    width: 170px;
-
-    text-align: center;
-  }
 
   /*  Total */
   .ov {
@@ -530,4 +455,8 @@ input:checked+.slider:before {
 
 .Show-Modal {
   display: block !important;
+}
+
+tbody:first-child {
+  color: rgb(29, 29, 155) !important;
 }
