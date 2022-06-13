@@ -149,7 +149,6 @@ function Summary({ items, isLoading, previousYearMonthnetSale, monthlynetSale })
 
                                             <td className="text-center ind">{(item.gpMargin).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
 
-                                            {/* <td className="text-center ind">{item.reduce((acc, curr) => acc + curr.today, 0)}</td> */}
                                         </tr>
                                     ))}
 
@@ -174,7 +173,7 @@ function Summary({ items, isLoading, previousYearMonthnetSale, monthlynetSale })
                     <div className="container-fluid mb-5">
                         <Chart
                             type="bar"
-                            width={375}
+                            width={395}
                             height={420}
                             series={[
                                 {
@@ -195,7 +194,7 @@ function Summary({ items, isLoading, previousYearMonthnetSale, monthlynetSale })
                                         ChartDatePrevious,
                                         ChartDate
                                     ],
-                                    colors: ["#77AFF9", "#3EB489"],
+                                    colors: ["#77AFF9", "#17b3a3"],
                                 },
 
                                 yaxis: {

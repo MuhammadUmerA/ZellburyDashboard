@@ -14,6 +14,8 @@ function Location({ itemsLocation, isLoading, LocationLabelsHook, LocationValueH
     let idSumprevious = 0;
     let idSumGrossSale = 0;
     let idSumGp = 0;
+    let idSQFeetYeild = 0;
+    let idRentRevenueRatio = 0;
     for (let i = 0; itemsLocation && i < itemsLocation.length; i++) {
         idSum += itemsLocation[i].today;
         idSumYes += itemsLocation[i].yesterday;
@@ -21,6 +23,8 @@ function Location({ itemsLocation, isLoading, LocationLabelsHook, LocationValueH
         idSumprevious += itemsLocation[i].previous;
         idSumGrossSale += itemsLocation[i].grossSale;
         idSumGp += itemsLocation[i].gpMargin;
+        idSQFeetYeild += itemsLocation[i].sqFeetYeild;
+        idRentRevenueRatio += itemsLocation[i].rentRevenueRatio;
     }
 
     // CSV
@@ -175,6 +179,8 @@ function Location({ itemsLocation, isLoading, LocationLabelsHook, LocationValueH
                                             <td id="color" style={{ textAlign: "center" }}>{(idSumGrossSale).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
 
                                             <td id="color" style={{ textAlign: "center" }}>{(idSumGp).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+                                            <td id="color" style={{ textAlign: "center" }}>{(idSQFeetYeild).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+                                            <td id="color" style={{ textAlign: "center" }}>{(idRentRevenueRatio).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
 
                                         </tr>
 

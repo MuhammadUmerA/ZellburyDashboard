@@ -14,16 +14,11 @@ import Production from "./Summaryies/Production";
 import Top from "./Summaryies/Top";
 
 function Dashboard() {
-
-
     //back to top 
-
-
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
-
         });
     };
 
@@ -54,31 +49,20 @@ function Dashboard() {
     const [itemsLocation, setItemsLocation] = useState([])
 
     // CAtegory
-
     const [itemsCategory, setItemsCategory] = useState([])
 
     //CoBrand
-
-
     const [itemsCoBrand, setItemsCoBrand] = useState([])
-
-
     // Production Year
-
     const [itemsProduction, setItemsProduction] = useState([])
-
     // Department
-
     const [itemsDepartment, setItemsDepartment] = useState([])
-
     // hooks for filters
-
     const [region, setRegion] = useState([])
     const [Locationitems, setLocationitems] = useState([])
     const [category, setCategory] = useState([])
     const [department, setDepartment] = useState([])
     const [coBrand, setCoBrand] = useState([])
-
 
     // chart for summaries
     // LOCATION  SUMMARY
@@ -127,7 +111,7 @@ function Dashboard() {
     const ProductionLable = [];
     const ProductionValue = [];
 
-    // Login
+    // Logout
     const navigate = useNavigate();
 
     const logout = () => {
@@ -140,8 +124,6 @@ function Dashboard() {
     const handleClick = () => {
         setShow(s => !s);
     };
-
-
 
     // filters  
     // Getting codes from drop down
@@ -227,6 +209,9 @@ function Dashboard() {
             // console.log(result.data)
 
             setItems(result.data)//sets the data to appear 
+
+            setMonthlynetSale(result.data[2].netSale)
+            setPreviousYearMonthnetSale(result.data[4].netSale)
             setLoading(false) //stop loading when data is fetched
 
         }
@@ -243,8 +228,16 @@ function Dashboard() {
             // console.log(result.data)
 
             setItemsLocation(result.data)//sets the data to appear 
-            setLoading(false) //stop loading when data is fetched
 
+
+            for (let i = 0; i < result.data.length; i++) {
+                LocationLabels.push(result.data[i].locationName);
+                LocationValue.push(parseInt(result.data[i].monthly));
+            }
+            setLocationLabelsHook(LocationLabels);
+            setLocationValueHook(LocationValue);
+
+            setLoading(false) //stop loading when data is fetched
         }
         getLocationSummary()
         //Category
@@ -257,8 +250,13 @@ function Dashboard() {
             // console.log(result.data)
 
             setItemsCategory(result.data)//sets the data to appear 
-            // setLoading(false) //stop loading when data is fetched
-
+            for (let i = 0; i < result.data.length; i++) {
+                CategoryLable.push(result.data[i].categoryName);
+                CategoryValue.push(parseInt(result.data[i].monthly));
+            }
+            setCategoryLableHook(CategoryLable);
+            setCategoryValueHook(CategoryValue);
+            setLoading(false) //stop loading when data is fetched
 
         }
         getItemsCategory()
@@ -274,7 +272,16 @@ function Dashboard() {
             // console.log(result.data)
 
             setItemsCoBrand(result.data)//sets the data to appear 
-            // setLoading(false) //stop loading when data is fetched
+
+
+
+            for (let i = 0; i < result.data.length; i++) {
+                CoBrandLable.push(result.data[i].coBrand);
+                CoBrandValue.push(parseInt(result.data[i].monthly));
+            }
+            setCoBrandLableHook(CoBrandLable);
+            setCoBrandValueHook(CoBrandValue);
+            setLoading(false) //stop loading when data is fetched
 
 
         }
@@ -287,9 +294,15 @@ function Dashboard() {
             )
             // console.log(result.data)
 
-            setItemsDepartment(result.data)//sets the data to appear 
-            // setLoading(false) //stop loading when data is fetched
+            setItemsDepartment(result.data)//sets the data to appear
 
+            for (let i = 0; i < result.data.length; i++) {
+                DepartmentLable.push(result.data[i].departmentName);
+                DepartmentValue.push(parseInt(result.data[i].monthly));
+            }
+            setDepartmentLableHook(DepartmentLable);
+            setDepartmentValueHook(DepartmentValue);
+            setLoading(false) //stop loading when data is fetched
 
         }
         getItemsDepartment()
@@ -304,134 +317,23 @@ function Dashboard() {
             // console.log(result.data)
 
             setItemsProduction(result.data)//sets the data to appear 
-            // setLoading(false) //stop loading when data is fetched
+
+
+            for (let i = 0; i < result.data.length; i++) {
+                ProductionLable.push(result.data[i].attribute2Name);
+                ProductionValue.push(parseInt(result.data[i].monthly));
+            }
+            setProductionLableHook(ProductionLable);
+            setProductionValueHook(ProductionValue);
+            setLoading(false) //stop loading when data is fetched
 
 
         }
         getItemsProductionYear()
-
-
-        // CHARTS OF SUMMARIES
-
-        // SALES SUMMARY
-
-        const getSalesSummaryChart = () => {
-
-            const url = `https://posapi.gtech.com.pk/api/post/SalesSummary?api=qTpq3bVFho&DateFrom=${MounthDate}&dateTo=${date}&Region=${valRegion}&Location=${valLocation}
-            &Category=${valCategory}&Department=${valDepartment}&CoBrand=${value}&Channel=${valChannel}`
-            //console.log(url);
-
-            axios
-                .get(url, {
-                    headers: {
-                        Accept: "application/json",
-                        "Content-Type": "application/json;charset=UTF-8",
-                    },
-                })
-                .then(({ data }) => {
-                    //console.log(data);
-                    //console.log(data[0].description);
-                    setMonthlynetSale(data[2].netSale)
-                    setPreviousYearMonthnetSale(data[4].netSale)
-
-                });
-
-        }
-        getSalesSummaryChart();
-        // LOCATION SUMMARY
-
-
-        const getLocationChartdata = async () => {
-            const reqData = await fetch(`https://posapi.gtech.com.pk/api/post/LocationSummary?api=qTpq3bVFho&DateFrom=${MounthDate}&dateTo=${date}&Region=${valRegion}&Location=${valLocation}
-            &Category=${valCategory}&Department=${valDepartment}&CoBrand=${value}&Channel=${valChannel}`);
-            const resData = await reqData.json();
-            for (let i = 0; i < resData.length; i++) {
-                LocationLabels.push(resData[i].locationName);
-                LocationValue.push(parseInt(resData[i].monthly));
-            }
-            setLocationLabelsHook(LocationLabels);
-            setLocationValueHook(LocationValue);
-            //console.log(resData); 
-        }
-
-        getLocationChartdata();
-
-        // category summary
-
-        const getCategoryChart = async () => {
-            const reqData = await fetch(`https://posapi.gtech.com.pk/api/post/CategorySummary?api=qTpq3bVFho&DateFrom=${MounthDate}&dateTo=${date}&Region=${valRegion}&Location=${valLocation}
-            &Category=${valCategory}&Department=${valDepartment}&CoBrand=${value}&Channel=${valChannel}`);
-            const resData = await reqData.json();
-            for (let i = 0; i < resData.length; i++) {
-                CategoryLable.push(resData[i].categoryName);
-                CategoryValue.push(parseInt(resData[i].monthly));
-            }
-            setCategoryLableHook(CategoryLable);
-            setCategoryValueHook(CategoryValue);
-            //console.log(resData); 
-        }
-
-
-        getCategoryChart();
-
-        const getCoBrandChart = async () => {
-            const reqData = await fetch(`https://posapi.gtech.com.pk/api/post/coBrandSummary?api=qTpq3bVFho&DateFrom=${MounthDate}&dateTo=${date}&Region=${valRegion}&Location=${valLocation}
-            &Category=${valCategory}&Department=${valDepartment}&CoBrand=${value}&Channel=${valChannel}`);
-            const resData = await reqData.json();
-            for (let i = 0; i < resData.length; i++) {
-                CoBrandLable.push(resData[i].coBrand);
-                CoBrandValue.push(parseInt(resData[i].monthly));
-            }
-            setCoBrandLableHook(CoBrandLable);
-            setCoBrandValueHook(CoBrandValue);
-            //console.log(resData); 
-        }
-
-        getCoBrandChart();
-
-        // DEPARTMENT
-
-
-
-        const getDepartmentChart = async () => {
-            const reqData = await fetch(`https://posapi.gtech.com.pk/api/post/departmentSummary?api=qTpq3bVFho&DateFrom=${MounthDate}&dateTo=${date}&Region=${valRegion}&Location=${valLocation}
-            &Category=${valCategory}&Department=${valDepartment}&CoBrand=${value}&Channel=${valChannel}`);
-            const resData = await reqData.json();
-            for (let i = 0; i < resData.length; i++) {
-                DepartmentLable.push(resData[i].departmentName);
-                DepartmentValue.push(parseInt(resData[i].monthly));
-            }
-            setDepartmentLableHook(DepartmentLable);
-            setDepartmentValueHook(DepartmentValue);
-            //console.log(resData); 
-        }
-
-        getDepartmentChart();
-
-
-        // PRODUCTION YEAR
-
-        const getStudentdata = async () => {
-            const reqData = await fetch(`https://posapi.gtech.com.pk/api/post/Attribute2Summary?api=qTpq3bVFho&DateFrom=${MounthDate}&dateTo=${date}&Region=${valRegion}&Location=${valLocation}
-            &Category=${valCategory}&Department=${valDepartment}&CoBrand=${value}&Channel=${valChannel}`);
-            const resData = await reqData.json();
-            for (let i = 0; i < resData.length; i++) {
-                ProductionLable.push(resData[i].attribute2Name);
-                ProductionValue.push(parseInt(resData[i].monthly));
-            }
-            setProductionLableHook(ProductionLable);
-            setProductionValueHook(ProductionValue);
-            //console.log(resData); 
-        }
-
-        getStudentdata();
     }
 
     useEffect(() => {
-
         Filter();
-
-
         // filters
         // Region
         const getRegion = async () => {
@@ -486,7 +388,6 @@ function Dashboard() {
             setDepartment(result.data)//sets the data to appear 
             // setLoading(false) //stop loading when data is fetched
 
-
         }
         getDepartment()
 
@@ -499,7 +400,6 @@ function Dashboard() {
 
             setCoBrand(result.data)//sets the data to appear 
             // setLoading(false) //stop loading when data is fetched
-
 
         }
         getCoBrand()
