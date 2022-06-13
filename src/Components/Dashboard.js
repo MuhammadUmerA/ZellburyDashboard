@@ -509,7 +509,7 @@ function Dashboard() {
         const sessonOver = () => {
             setTimeout(() => {
                 navigate('/Login');
-            }, 300000);
+            }, 1800000);
         }
 
         sessonOver()
