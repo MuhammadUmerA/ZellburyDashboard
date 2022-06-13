@@ -168,16 +168,10 @@ function Location({ itemsLocation, isLoading, LocationLabelsHook, LocationValueH
                                             <td className="sticky-col first-col" id="color">Total</td>
 
                                             <td id="color" style={{ textAlign: "center" }}>{(idSum).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
-
                                             <td id="color" style={{ textAlign: "center" }}>{(idSumYes).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
-
-
                                             <td id="color" style={{ textAlign: "center" }}>{(idSumMon).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
-
-
                                             <td id="color" style={{ textAlign: "center" }}>{(idSumprevious).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
                                             <td id="color" style={{ textAlign: "center" }}>{(idSumGrossSale).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
-
                                             <td id="color" style={{ textAlign: "center" }}>{(idSumGp).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
                                             <td id="color" style={{ textAlign: "center" }}>{(idSQFeetYeild).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
                                             <td id="color" style={{ textAlign: "center" }}>{(idRentRevenueRatio).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
