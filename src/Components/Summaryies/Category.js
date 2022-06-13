@@ -5,7 +5,7 @@ import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 // import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Loader from '../Loader'
 
-function Category({ itemsCategory, isLoading, CategoryValueHook, CategoryLableHook }) {
+function Category({ itemsCategory, isLoading, CategoryValueHook, CategorylabelHook }) {
 
 
 
@@ -278,7 +278,7 @@ function Category({ itemsCategory, isLoading, CategoryValueHook, CategoryLableHo
                             noData: { text: "Loading...." },
                             // colors:["#f90000","#f0f"],
                             colors: ['#5E667F', '#19B28E', '#5E667F', '#FFD72F', '#592975', '#71CC81', '#199AA3'],
-                            labels: CategoryLableHook,
+                            labels: CategorylabelHook,
                             legend: {
                                 show: false
                             }

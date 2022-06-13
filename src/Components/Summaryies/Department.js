@@ -5,7 +5,7 @@ import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 // import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Loader from '../Loader'
 
-function Department({ isLoading, itemsDepartment, DepartmentValueHook, DepartmentLableHook }) {
+function Department({ isLoading, itemsDepartment, DepartmentValueHook, DepartmentlabelHook }) {
   // Today
 
   let idSum = 0;
@@ -271,7 +271,7 @@ function Department({ isLoading, itemsDepartment, DepartmentValueHook, Departmen
               noData: { text: "Loading...." },
               // colors:["#f90000","#f0f"],
               colors: ['#5E667F', '#19B28E', '#5E667F', '#FFD72F', '#592975', '#71CC81', '#199AA3'],
-              labels: DepartmentLableHook,
+              labels: DepartmentlabelHook,
               legend: {
                 show: false
               }

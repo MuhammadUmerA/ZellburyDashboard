@@ -76,39 +76,39 @@ function Dashboard() {
 
     // CATEGORY SUMMARY
     const [CategoryValueHook, setCategoryValueHook] = useState([]);
-    const [CategoryLableHook, setCategoryLableHook] = useState([]);
+    const [CategorylabelHook, setCategorylabelHook] = useState([]);
 
     //CO BRAND
     const [CoBrandValueHook, setCoBrandValueHook] = useState([]);
-    const [CoBrandLableHook, setCoBrandLableHook] = useState([]);
+    const [CoBrandlabelHook, setCoBrandlabelHook] = useState([]);
 
     //DEPARTMENT
 
     const [DepartmentValueHook, setDepartmentValueHook] = useState([]);
-    const [DepartmentLableHook, setDepartmentLableHook] = useState([]);
+    const [DepartmentlabelHook, setDepartmentlabelHook] = useState([]);
 
 
     // PRODUCTION YEAR 
 
     const [ProductionValueHook, setProductionValueHook] = useState([]);
-    const [ProductionLableHook, setProductionLableHook] = useState([]);
+    const [ProductionlabelHook, setProductionlabelHook] = useState([]);
 
     // constants for chart 
     const LocationLabels = [];
     const LocationValue = [];
     // Category
-    const CategoryLable = [];
+    const Categorylabel = [];
     const CategoryValue = [];
     //coobarnd
-    const CoBrandLable = [];
+    const CoBrandlabel = [];
     const CoBrandValue = [];
     //DEPARTMENT
-    const DepartmentLable = [];
+    const Departmentlabel = [];
     const DepartmentValue = [];
 
     // PRODUCTION
 
-    const ProductionLable = [];
+    const Productionlabel = [];
     const ProductionValue = [];
 
     // Logout
@@ -251,10 +251,10 @@ function Dashboard() {
 
             setItemsCategory(result.data)//sets the data to appear 
             for (let i = 0; i < result.data.length; i++) {
-                CategoryLable.push(result.data[i].categoryName);
+                Categorylabel.push(result.data[i].categoryName);
                 CategoryValue.push(parseInt(result.data[i].monthly));
             }
-            setCategoryLableHook(CategoryLable);
+            setCategorylabelHook(Categorylabel);
             setCategoryValueHook(CategoryValue);
             setLoading(false) //stop loading when data is fetched
 
@@ -276,10 +276,10 @@ function Dashboard() {
 
 
             for (let i = 0; i < result.data.length; i++) {
-                CoBrandLable.push(result.data[i].coBrand);
+                CoBrandlabel.push(result.data[i].coBrand);
                 CoBrandValue.push(parseInt(result.data[i].monthly));
             }
-            setCoBrandLableHook(CoBrandLable);
+            setCoBrandlabelHook(CoBrandlabel);
             setCoBrandValueHook(CoBrandValue);
             setLoading(false) //stop loading when data is fetched
 
@@ -297,10 +297,10 @@ function Dashboard() {
             setItemsDepartment(result.data)//sets the data to appear
 
             for (let i = 0; i < result.data.length; i++) {
-                DepartmentLable.push(result.data[i].departmentName);
+                Departmentlabel.push(result.data[i].departmentName);
                 DepartmentValue.push(parseInt(result.data[i].monthly));
             }
-            setDepartmentLableHook(DepartmentLable);
+            setDepartmentlabelHook(Departmentlabel);
             setDepartmentValueHook(DepartmentValue);
             setLoading(false) //stop loading when data is fetched
 
@@ -320,10 +320,10 @@ function Dashboard() {
 
 
             for (let i = 0; i < result.data.length; i++) {
-                ProductionLable.push(result.data[i].attribute2Name);
+                Productionlabel.push(result.data[i].attribute2Name);
                 ProductionValue.push(parseInt(result.data[i].monthly));
             }
-            setProductionLableHook(ProductionLable);
+            setProductionlabelHook(Productionlabel);
             setProductionValueHook(ProductionValue);
             setLoading(false) //stop loading when data is fetched
 
@@ -756,16 +756,16 @@ function Dashboard() {
 
                                     </div>
                                     <div className={toggleState === 3 ? "content-active" : "content-inactive"}>
-                                        <CoBrand isLoading={isLoading} itemsCoBrand={itemsCoBrand} CoBrandValueHook={CoBrandValueHook} CoBrandLableHook={CoBrandLableHook} />
+                                        <CoBrand isLoading={isLoading} itemsCoBrand={itemsCoBrand} CoBrandValueHook={CoBrandValueHook} CoBrandlabelHook={CoBrandlabelHook} />
                                     </div>
                                     <div className={toggleState === 4 ? "content-active" : "content-inactive"}>
-                                        <Department isLoading={isLoading} itemsDepartment={itemsDepartment} DepartmentValueHook={DepartmentValueHook} DepartmentLableHook={DepartmentLableHook} />
+                                        <Department isLoading={isLoading} itemsDepartment={itemsDepartment} DepartmentValueHook={DepartmentValueHook} DepartmentlabelHook={DepartmentlabelHook} />
                                     </div>
                                     <div className={toggleState === 5 ? "content-active" : "content-inactive"}>
-                                        <Category isLoading={isLoading} itemsCategory={itemsCategory} CategoryValueHook={CategoryValueHook} CategoryLableHook={CategoryLableHook} />
+                                        <Category isLoading={isLoading} itemsCategory={itemsCategory} CategoryValueHook={CategoryValueHook} CategorylabelHook={CategorylabelHook} />
                                     </div>
                                     <div className={toggleState === 6 ? "content-active" : "content-inactive"}>
-                                        <Production isLoading={isLoading} itemsProduction={itemsProduction} ProductionValueHook={ProductionValueHook} ProductionLableHook={ProductionLableHook} />
+                                        <Production isLoading={isLoading} itemsProduction={itemsProduction} ProductionValueHook={ProductionValueHook} ProductionlabelHook={ProductionlabelHook} />
                                     </div>
                                     <div className={toggleState === 7 ? "content-active" : "content-inactive"}>
                                         <Top />

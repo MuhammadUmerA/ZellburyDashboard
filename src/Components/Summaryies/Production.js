@@ -6,7 +6,7 @@ import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 import Loader from '../Loader'
 
 
-function Production({ isLoading, itemsProduction, ProductionValueHook, ProductionLableHook }) {
+function Production({ isLoading, itemsProduction, ProductionValueHook, ProductionlabelHook }) {
 
 
 
@@ -249,7 +249,7 @@ function Production({ isLoading, itemsProduction, ProductionValueHook, Productio
                             noData: { text: "Loading...." },
                             // colors:["#f90000","#f0f"],
                             colors: ['#19B28E', '#5E667F', '#FFD72F', '#592975', '#71CC81', '#199AA3'],
-                            labels: ProductionLableHook,
+                            labels: ProductionlabelHook,
                             legend: {
                                 show: false
                             },

@@ -6,7 +6,7 @@ import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 import Loader from '../Loader'
 
 
-function CoBrand({ isLoading, itemsCoBrand, CoBrandLableHook, CoBrandValueHook }) {
+function CoBrand({ isLoading, itemsCoBrand, CoBrandlabelHook, CoBrandValueHook }) {
 
 
     // Today
@@ -254,7 +254,7 @@ function CoBrand({ isLoading, itemsCoBrand, CoBrandLableHook, CoBrandValueHook }
                             noData: { text: "Loading...." },
                             // colors:["#f90000","#f0f"],
                             colors: ['#19B28E', '#5E667F', '#FFD72F', '#592975', '#71CC81', '#199AA3'],
-                            labels: CoBrandLableHook,
+                            labels: CoBrandlabelHook,
                             legend: {
                                 show: false
                             }
