@@ -104,7 +104,7 @@ function Summary({ items, isLoading, previousYearMonthnetSale, monthlynetSale })
                             <table className="table  table-hover table-bordered" id="tableS">
                                 <thead id="tom">
                                     <tr>
-                                        <th className="sticky-col first-col2 coltm4">Description</th>
+                                        <th className="sticky-col first-col2 coltm4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
 
                                         <th className="coltm4">Gross&nbsp;Sale</th>
 

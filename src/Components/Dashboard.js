@@ -93,23 +93,6 @@ function Dashboard() {
     const [ProductionValueHook, setProductionValueHook] = useState([]);
     const [ProductionlabelHook, setProductionlabelHook] = useState([]);
 
-    // constants for chart 
-    let LocationLabels = [];
-    let LocationValue = [];
-    // Category
-    let Categorylabel = [];
-    let CategoryValue = [];
-    //coobarnd
-    let CoBrandlabel = [];
-    let CoBrandValue = [];
-    //DEPARTMENT
-    let Departmentlabel = [];
-    let DepartmentValue = [];
-
-    // PRODUCTION
-
-    let Productionlabel = [];
-    let ProductionValue = [];
 
     // Logout
     const navigate = useNavigate();
@@ -168,6 +151,8 @@ function Dashboard() {
     const handleChange = (e) => {
         setValue(e.target.value);
     };
+
+
     // Click On Filter Btn
     const Filter = () => {
 
@@ -183,17 +168,17 @@ function Dashboard() {
         setItemsProduction([]);
 
         // constants for chart 
-         let LocationLabels = [];
-         let LocationValue = [];
+        let LocationLabels = [];
+        let LocationValue = [];
         // Category
-         let Categorylabel = [];
-         let CategoryValue = [];
+        let Categorylabel = [];
+        let CategoryValue = [];
         //coobarnd
-         let CoBrandlabel = [];
-         let CoBrandValue = [];
+        let CoBrandlabel = [];
+        let CoBrandValue = [];
         //DEPARTMENT
-         let Departmentlabel = [];
-         let DepartmentValue = [];
+        let Departmentlabel = [];
+        let DepartmentValue = [];
 
         // PRODUCTION
 
@@ -253,8 +238,8 @@ function Dashboard() {
                 LocationValue.push(parseInt(result.data[i].monthly));
             }
             setLocationLabelsHook(LocationLabels);
-            setLocationValueHook(LocationValue);
-            console.log(LocationValueHook);
+            setLocationValueHook(LocationValue);    
+            // console.log(LocationValueHook);
             setItemsLocation(result.data)//sets the data to appear 
             setLoading(false) //stop loading when data is fetched
         }
@@ -437,7 +422,20 @@ function Dashboard() {
     }, [])//when we use useEffect we put dependency as a second paramers
 
 
+    // Refresh Btn
+    const ReFresh = async () => {
+        const SetApiToDefault = () => {
+            setValCategory('');
+            setValChannel("All");
+            setValDepartment('');
+            setValLocation('');
+            setValRegion('');
+            setValue('');
+        }
+        SetApiToDefault();
+        Filter();
 
+    }
 
     return (
         <>
@@ -628,7 +626,7 @@ function Dashboard() {
                                                         <i className="fa fa-plus"> Apply Filters</i>
                                                     </button>
                                                 </h5>
-                                                <button type="button" className="btn btn-primary" onClick={Filter} id="refresh"><i className="fa fa-refresh" /></button>
+                                                <button type="button" className="btn btn-primary" onClick={ReFresh} id="refresh"><i className="fa fa-refresh" /></button>
                                             </div>
                                         </div>
                                     </div>

@@ -113,7 +113,7 @@ function Location({ itemsLocation, isLoading, LocationLabelsHook, LocationValueH
                     <div className="col-md-12 col-sm-12" >
                         <div className="view">
                             <div className="wrapper">
-                                <table className="table  table-hover table-bordered" id="Location-table-to-xls">
+                                <table className="table  table-hover table-bordered vertical-scrollable" id="Location-table-to-xls">
                                     <thead id="tom">
                                         <tr>
                                             <th className="sticky-col first-col2 coltm4">Location Name</th>
@@ -163,7 +163,7 @@ function Location({ itemsLocation, isLoading, LocationLabelsHook, LocationValueH
                                             </tr>
                                         ))}
 
-                                        <tr>
+                                        <tr id="total-border">
 
                                             <td className="sticky-col first-col" id="color">Total</td>
 
@@ -210,21 +210,20 @@ function Location({ itemsLocation, isLoading, LocationLabelsHook, LocationValueH
                             colors: ['#5E667F', '#19B28E', '#5E667F', '#FFD72F', '#592975', '#71CC81', '#199AA3'],
                             labels: LocationLabelsHook,
                             legend: {
-                              show: false
-                          },
-                     
-                          dataLabels: {
-                            enabled: true,
-                            textAnchor: 'middle',
-                              style:
-                                  { fontSize: '13px' , color:'#FFFFFF'},
-                              formatter: function (value, opts) {
-                                  return [opts.w.globals.labels[opts.seriesIndex] + '\n' + value.toFixed(1)+ '%']
-                              }
-                          },
-              
-              
-                      }}
+                                show: false
+                            },
+
+                            dataLabels: {
+                                enabled: true,
+                                style:
+                                    { fontSize: '11px', color: '#FFFFFF' },
+                                formatter: function (value, opts) {
+                                    return [opts.w.globals.labels[opts.seriesIndex] + '\n' + value.toFixed(1) + '%']
+                                }
+                            },
+
+
+                        }}
                     >
                     </Chart>
                 </div>

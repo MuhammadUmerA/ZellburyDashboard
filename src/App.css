@@ -457,6 +457,11 @@ input:checked+.slider:before {
   display: block !important;
 }
 
-tbody:first-child {
+tr:first-child {
   color: rgb(29, 29, 155) !important;
+  font-weight: bold !important;
+}
+
+#total-border {
+  border-top: 2px solid rgb(29, 29, 155);
 }

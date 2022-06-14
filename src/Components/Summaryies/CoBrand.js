@@ -166,7 +166,7 @@ function CoBrand({ isLoading, itemsCoBrand, CoBrandlabelHook, CoBrandValueHook }
                                                 {/* <td className="text-center ind">{item.reduce((acc, curr) => acc + curr.today, 0)}</td> */}
                                             </tr>
                                         ))}
-                                        <tr >
+                                          <tr id="total-border">
                                             <td className="sticky-col first-col" id="color">Total</td>
 
                                             <td id="color" style={{ textAlign: "center" }}>{(idSum).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
@@ -196,42 +196,6 @@ function CoBrand({ isLoading, itemsCoBrand, CoBrandlabelHook, CoBrandValueHook }
 
                             </div>
                         </div>
-
-
-                        {/* <table className='tbl-category table table-hover display nowrap' width="100%">
-                    <thead >
-                        <tr className="bg-inverse" style={{ fontWeight: 800 }}>
-                            <th className="bb-2 bg-inverse text-center ">Description</th>
-                            <th className="bb-2 bg-inverse text-center mg">Gross Sale	</th>
-                            <th className="bb-2 bg-inverse text-center mg">Net Sale</th>
-                            <th className="bb-2 bg-inverse text-center mg">Qty</th>
-                            <th className="bb-2 bg-inverse text-center mg">Discount</th>
-                            <th className="bb-2 bg-inverse text-center mg">Sales Return</th>
-                            <th className="bb-2 bg-inverse text-center mg">Total Bills</th>
-                            <th className="bb-2 bg-inverse text-center mg">Average Bill	</th>
-                            <th className="bb-2 bg-inverse text-center mg">GP Margin</th>
-                        </tr>
-                    </thead>
-                    <tbody className="dataTables_scrollBody fix" style={{ position: 'relative', overflow: 'auto', width: '100%', maxHeight: '50vh' }}>
-                        {itemsCoBrand.map((item, index) => (   //here we map through the items
-                            <tr className='bg-white' key={index}>
-
-                                <td>{item.locationName}</td>
-                                <td>{item.todayQty}</td>
-                                <td>{item.todayQty}</td>
-                                <td>{item.todayQty}</td>
-                                <td>{item.todayQty}</td>
-                                <td>{item.todayQty}</td>
-                                <td>{item.todayQty}</td>
-                            </tr>
-                        ))}
-
-
-
-
-                    </tbody>
-                </table> */}
-
                     </div>
 
                 </div>
@@ -262,7 +226,7 @@ function CoBrand({ isLoading, itemsCoBrand, CoBrandlabelHook, CoBrandValueHook }
                             enabled: true,
                             textAnchor: 'middle',
                               style:
-                                  { fontSize: '13px' , color:'#FFFFFF'},
+                                  { fontSize: '11px' ,fontWeight:'' , color:'#FFFFFF'},
                               formatter: function (value, opts) {
                                   return [opts.w.globals.labels[opts.seriesIndex] + '\n' + value.toFixed(1)+ '%']
                               }

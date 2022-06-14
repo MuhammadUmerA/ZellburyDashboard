@@ -180,7 +180,7 @@ function Department({ isLoading, itemsDepartment, DepartmentValueHook, Departmen
                       </tr>
                     ))}
 
-                    <tr >
+                    <tr id="total-border">
                       <td className="sticky-col first-col" id="color">Total</td>
 
                       <td id="color" style={{ textAlign: "center" }}>{(idSum).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
