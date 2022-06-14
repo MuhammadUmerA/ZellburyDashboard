@@ -252,34 +252,24 @@ function CoBrand({ isLoading, itemsCoBrand, CoBrandlabelHook, CoBrandValueHook }
 
                             noData: { text: "Loading...." },
                             // colors:["#f90000","#f0f"],
-                            colors: ['#19B28E', '#5E667F', '#FFD72F', '#592975', '#71CC81', '#199AA3'],
+                            colors: ['#5E667F', '#19B28E', '#5E667F', '#FFD72F', '#592975', '#71CC81', '#199AA3'],
                             labels: CoBrandlabelHook,
                             legend: {
-                                show: false
-                            },
-                            // plotOptions: {
-                            //     pie: {
-
-                            //         dataLabels: {
-                            //             enabled: true,
-                            //             minAngleToShowLabel: 3,
-
-
-
-                            //         }
-                            //     }
-                            // },
-                            dataLabels: {
-                                enabled: true,
-                                style:
-                                    { fontSize: '13px' , color:'#FFFFFF'},
-                                formatter: function (value, opts) {
-                                    return [opts.w.globals.labels[opts.seriesIndex] + '%']
-                                }
-                            },
-
-
-                        }}
+                              show: false
+                          },
+                     
+                          dataLabels: {
+                            enabled: true,
+                            textAnchor: 'middle',
+                              style:
+                                  { fontSize: '13px' , color:'#FFFFFF'},
+                              formatter: function (value, opts) {
+                                  return [opts.w.globals.labels[opts.seriesIndex] + '\n' + value.toFixed(1)+ '%']
+                              }
+                          },
+              
+              
+                      }}
                     >
                     </Chart>
                 </div>

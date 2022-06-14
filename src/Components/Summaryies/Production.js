@@ -10,57 +10,28 @@ function Production({ isLoading, itemsProduction, ProductionValueHook, Productio
 
 
 
-    // Today
+
 
     let idSum = 0;
+    let idSumTodayQty = 0;
+    let idSumYes = 0;
+    let idSumYesQty = 0;
+    let idSumMon = 0;
+    let idSumMonQty = 0;
+    let idSumpreMon = 0;
+    let idSumpreMonQty = 0;
+
     for (let i = 0; itemsProduction && i < itemsProduction.length; i++) {
         idSum += itemsProduction[i].today;
-    }
-
-    // yesterday
-
-    let idSumTodayQty = 0;
-    for (let i = 0; itemsProduction && i < itemsProduction.length; i++) {
         idSumTodayQty += itemsProduction[i].todayQty;
-    }
-    // monthly
-
-    let idSumYes = 0;
-    for (let i = 0; itemsProduction && i < itemsProduction.length; i++) {
         idSumYes += itemsProduction[i].yesterday;
-    }
-    // monthly
-
-    let idSumYesQty = 0;
-    for (let i = 0; itemsProduction && i < itemsProduction.length; i++) {
         idSumYesQty += itemsProduction[i].yesterdayQty;
-    }
-
-
-    //previous
-
-    let idSumMon = 0;
-    for (let i = 0; itemsProduction && i < itemsProduction.length; i++) {
         idSumMon += itemsProduction[i].monthly;
-    }
-    //previous
-
-    let idSumMonQty = 0;
-    for (let i = 0; itemsProduction && i < itemsProduction.length; i++) {
         idSumMonQty += itemsProduction[i].monthlyQty;
-    }
-    //previous
-
-    let idSumpreMon = 0;
-    for (let i = 0; itemsProduction && i < itemsProduction.length; i++) {
         idSumpreMon += itemsProduction[i].previous;
-    }
-    //previous
-
-    let idSumpreMonQty = 0;
-    for (let i = 0; itemsProduction && i < itemsProduction.length; i++) {
         idSumpreMonQty += itemsProduction[i].previousQty;
     }
+
 
     // CSV
     const headers = [
@@ -246,30 +217,20 @@ function Production({ isLoading, itemsProduction, ProductionValueHook, Productio
                         options={{
 
                             noData: { text: "Loading...." },
-
-                            colors: ['#19B28E', '#5E667F', '#FFD72F', '#592975', '#71CC81', '#199AA3'],
+                            // colors:["#f90000","#f0f"],
+                            colors: ['#5E667F', '#19B28E', '#5E667F', '#FFD72F', '#592975', '#71CC81', '#199AA3'],
                             labels: ProductionlabelHook,
                             legend: {
                                 show: false
                             },
-                            // plotOptions: {
-                            //     pie: {
 
-                            //         dataLabels: {
-                            //             enabled: true,
-                            //             minAngleToShowLabel: 3,
-
-
-
-                            //         }
-                            //     }
-                            // },
                             dataLabels: {
                                 enabled: true,
+                                textAnchor: 'middle',
                                 style:
-                                    { fontSize: '13px' , color:'#FFFFFF'},
+                                    { fontSize: '14px', color: '#FFFFFF' },
                                 formatter: function (value, opts) {
-                                    return [opts.w.globals.labels[opts.seriesIndex] + '%']
+                                    return [opts.w.globals.labels[opts.seriesIndex] + '\n' + value.toFixed(1) + '%']
                                 }
                             },
 

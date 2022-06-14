@@ -11,66 +11,33 @@ function Category({ itemsCategory, isLoading, CategoryValueHook, CategorylabelHo
     // Today
 
     let idSum = 0;
+    let idSumTodayQty = 0;
+    let idSumYes = 0;
+    let idSumYesQty = 0;
+    let idSumMon = 0;
+    let idSumMonQty = 0;
+    let idSumpreMon = 0;
+    let idSumpreMonQty = 0;
+    let idSumGrossSale = 0;
+    let idSumGp = 0;
+
+
     for (let i = 0; itemsCategory && i < itemsCategory.length; i++) {
         idSum += itemsCategory[i].today;
-    }
-
-    // yesterday
-
-    let idSumTodayQty = 0;
-    for (let i = 0; itemsCategory && i < itemsCategory.length; i++) {
         idSumTodayQty += itemsCategory[i].todayQty;
-    }
-    // monthly
-
-    let idSumYes = 0;
-    for (let i = 0; itemsCategory && i < itemsCategory.length; i++) {
         idSumYes += itemsCategory[i].yesterday;
-    }
-    // monthly
-
-    let idSumYesQty = 0;
-    for (let i = 0; itemsCategory && i < itemsCategory.length; i++) {
         idSumYesQty += itemsCategory[i].yesterdayQty;
-    }
-
-
-    //previous
-
-    let idSumMon = 0;
-    for (let i = 0; itemsCategory && i < itemsCategory.length; i++) {
         idSumMon += itemsCategory[i].monthly;
-    }
-    //previous
-
-    let idSumMonQty = 0;
-    for (let i = 0; itemsCategory && i < itemsCategory.length; i++) {
         idSumMonQty += itemsCategory[i].monthlyQty;
-    }
-    //previous
-
-    let idSumpreMon = 0;
-    for (let i = 0; itemsCategory && i < itemsCategory.length; i++) {
         idSumpreMon += itemsCategory[i].previous;
-    }
-    //previous
-
-    let idSumpreMonQty = 0;
-    for (let i = 0; itemsCategory && i < itemsCategory.length; i++) {
         idSumpreMonQty += itemsCategory[i].previousQty;
-    }
-    //previous
-
-    let idSumGrossSale = 0;
-    for (let i = 0; itemsCategory && i < itemsCategory.length; i++) {
         idSumGrossSale += itemsCategory[i].grossSale;
-    }
-    //previous
-
-    let idSumGp = 0;
-    for (let i = 0; itemsCategory && i < itemsCategory.length; i++) {
         idSumGp += itemsCategory[i].gpMargin;
     }
+
+
+
+
     // CSV
     const headers = [
         { label: "Department Name", key: "categoryName" },
@@ -271,7 +238,6 @@ function Category({ itemsCategory, isLoading, CategoryValueHook, CategorylabelHo
                         height={320}
 
                         series={CategoryValueHook}
-
                         options={{
 
                             noData: { text: "Loading...." },
@@ -281,24 +247,14 @@ function Category({ itemsCategory, isLoading, CategoryValueHook, CategorylabelHo
                             legend: {
                                 show: false
                             },
-                            // plotOptions: {
-                            //     pie: {
 
-                            //         dataLabels: {
-                            //             enabled: true,
-                            //             minAngleToShowLabel: 3,
-
-
-
-                            //         }
-                            //     }
-                            // },
                             dataLabels: {
                                 enabled: true,
+                                textAnchor: 'middle',
                                 style:
-                                    { fontSize: '13px' , color:'#FFFFFF'},
+                                    { fontSize: '13px', color: '#FFFFFF' },
                                 formatter: function (value, opts) {
-                                    return [opts.w.globals.labels[opts.seriesIndex] + '%']
+                                    return [opts.w.globals.labels[opts.seriesIndex] + '\n' + value.toFixed(1) + '%']
                                 }
                             },
 

@@ -203,30 +203,28 @@ function Location({ itemsLocation, isLoading, LocationLabelsHook, LocationValueH
                         height={320}
 
                         series={LocationValueHook}
-
                         options={{
 
                             noData: { text: "Loading...." },
                             // colors:["#f90000","#f0f"],
-                            colors: ['#5E667F', '#19B28E', '#FFD72F', '#592975', '#71CC81', '#199AA3', '#D9D872'],
+                            colors: ['#5E667F', '#19B28E', '#5E667F', '#FFD72F', '#592975', '#71CC81', '#199AA3'],
                             labels: LocationLabelsHook,
-
                             legend: {
-                                show: false
-                            },
+                              show: false
+                          },
                      
-                            dataLabels: {
-                                enabled: true,
-                                style:
-                                    { fontSize: '13px' , color:'#FFFFFF'},
-                                formatter: function (value, opts) {
-                                    return [opts.w.globals.labels[opts.seriesIndex] + '%']
-                                }
-                            },
-
-
-                        }}
-
+                          dataLabels: {
+                            enabled: true,
+                            textAnchor: 'middle',
+                              style:
+                                  { fontSize: '13px' , color:'#FFFFFF'},
+                              formatter: function (value, opts) {
+                                  return [opts.w.globals.labels[opts.seriesIndex] + '\n' + value.toFixed(1)+ '%']
+                              }
+                          },
+              
+              
+                      }}
                     >
                     </Chart>
                 </div>

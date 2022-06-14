@@ -8,64 +8,29 @@ function Department({ isLoading, itemsDepartment, DepartmentValueHook, Departmen
   // Today
 
   let idSum = 0;
+  let idSumTodayQty = 0;
+  let idSumYes = 0;
+  let idSumYesQty = 0;
+  let idSumMon = 0;
+  let idSumMonQty = 0;
+  let idSumpreMon = 0;
+  let idSumpreMonQty = 0;
+  let idSumGrossSale = 0;
+  let idSumGp = 0;
+
+
+
+
   for (let i = 0; itemsDepartment && i < itemsDepartment.length; i++) {
     idSum += itemsDepartment[i].today;
-  }
-
-  // yesterday
-
-  let idSumTodayQty = 0;
-  for (let i = 0; itemsDepartment && i < itemsDepartment.length; i++) {
     idSumTodayQty += itemsDepartment[i].todayQty;
-  }
-  // monthly
-
-  let idSumYes = 0;
-  for (let i = 0; itemsDepartment && i < itemsDepartment.length; i++) {
     idSumYes += itemsDepartment[i].yesterday;
-  }
-  // monthly
-
-  let idSumYesQty = 0;
-  for (let i = 0; itemsDepartment && i < itemsDepartment.length; i++) {
     idSumYesQty += itemsDepartment[i].yesterdayQty;
-  }
-
-
-  //previous
-
-  let idSumMon = 0;
-  for (let i = 0; itemsDepartment && i < itemsDepartment.length; i++) {
     idSumMon += itemsDepartment[i].monthly;
-  }
-  //previous
-
-  let idSumMonQty = 0;
-  for (let i = 0; itemsDepartment && i < itemsDepartment.length; i++) {
     idSumMonQty += itemsDepartment[i].monthlyQty;
-  }
-  //previous
-
-  let idSumpreMon = 0;
-  for (let i = 0; itemsDepartment && i < itemsDepartment.length; i++) {
     idSumpreMon += itemsDepartment[i].previous;
-  }
-  //previous
-
-  let idSumpreMonQty = 0;
-  for (let i = 0; itemsDepartment && i < itemsDepartment.length; i++) {
     idSumpreMonQty += itemsDepartment[i].previousQty;
-  }
-  //previous
-
-  let idSumGrossSale = 0;
-  for (let i = 0; itemsDepartment && i < itemsDepartment.length; i++) {
     idSumGrossSale += itemsDepartment[i].grossSale;
-  }
-  //previous
-
-  let idSumGp = 0;
-  for (let i = 0; itemsDepartment && i < itemsDepartment.length; i++) {
     idSumGp += itemsDepartment[i].gpMargin;
   }
 
@@ -273,30 +238,20 @@ function Department({ isLoading, itemsDepartment, DepartmentValueHook, Departmen
               labels: DepartmentlabelHook,
               legend: {
                 show: false
-            },
-            // plotOptions: {
-            //     pie: {
+              },
 
-            //         dataLabels: {
-            //             enabled: true,
-            //             minAngleToShowLabel: 3,
-
-
-
-            //         }
-            //     }
-            // },
-            dataLabels: {
+              dataLabels: {
                 enabled: true,
+                textAnchor: 'middle',
                 style:
-                    { fontSize: '13px' , color:'#FFFFFF'},
+                  { fontSize: '13px', color: '#FFFFFF' },
                 formatter: function (value, opts) {
-                    return [opts.w.globals.labels[opts.seriesIndex] + '%']
+                  return [opts.w.globals.labels[opts.seriesIndex] + '\n' + value.toFixed(1) + '%']
                 }
-            },
+              },
 
 
-        }}
+            }}
           >
           </Chart>
         </div>
