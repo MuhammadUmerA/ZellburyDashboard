@@ -100,13 +100,16 @@ function Dashboard() {
     const logout = () => {
         navigate('/Login');
     }
-
+    //
     // auto refresh start
     const [show, setShow] = useState(true);
 
     const handleClick = () => {
         setShow(s => !s);
     };
+
+
+
 
     // filters  
     // Getting codes from drop down
@@ -417,10 +420,35 @@ function Dashboard() {
         }
 
         sessonOver()
+        // auto refresh
+
+        if (!show) {
+            setTimeout(() => {
+                Filter();
+            }, 600000000);
+        }
+
+
+        if (show) {
+            setTimeout(() => {
+                Filter();
+            }, 60000);
+            setTimeout(() => {
+                Filter();
+            }, 120000);
+            setTimeout(() => {
+                Filter();
+            }, 180000);
+            setTimeout(() => {
+                Filter();
+            }, 240000);
+            setTimeout(() => {
+                Filter();
+            }, 300000);
+        }
 
 
     }, [])//when we use useEffect we put dependency as a second paramers
-
 
     // Refresh Btn
     const ReFresh = async () => {
@@ -432,6 +460,7 @@ function Dashboard() {
             setValRegion('');
             setValue('');
         }
+        SetApiToDefault();
         SetApiToDefault();
         Filter();
 
