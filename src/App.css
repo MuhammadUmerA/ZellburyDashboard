@@ -221,9 +221,10 @@ small {
 
   /*  Total */
   .ov {
-    margin-top: 10%;
-
+    margin-top: 8%;
   }
+
+
 
   .cont {
     margin: 10px 0px 0px 10px;
@@ -460,8 +461,12 @@ input:checked+.slider:before {
 tr:first-child {
   color: rgb(29, 29, 155) !important;
   font-weight: bold !important;
+  font-size: 14px;
 }
 
 #total-border {
   border-top: 2px solid rgb(29, 29, 155);
+}
+.form_Background {
+  background-color: rgba(51, 47, 47, 0.907) !important;
 }

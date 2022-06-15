@@ -181,9 +181,6 @@ function Category({ itemsCategory, isLoading, CategoryValueHook, CategorylabelHo
                                                 <td className="text-center ind">{(item.grossSale).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
 
                                                 <td className="text-center ind">{(item.gpMargin).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
-
-
-                                                {/* <td className="text-center ind">{item.reduce((acc, curr) => acc + curr.today, 0)}</td> */}
                                             </tr>
                                         ))}
 

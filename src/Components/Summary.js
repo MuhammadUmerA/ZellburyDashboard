@@ -182,17 +182,13 @@ function Summary({ items, isLoading, previousYearMonthnetSale, monthlynetSale })
                                 title: {
                                     style: { fontSize: 13 },
                                 },
-
-
                                 theme: { mode: "light" },
-
                                 xaxis: {
-
                                     categories: [
                                         ChartDatePrevious,
                                         ChartDate
                                     ],
-                                    colors: ["#77AFF9", "#17b3a3"],
+                                    colors: ["#87CEEB"],
                                 },
 
                                 yaxis: {

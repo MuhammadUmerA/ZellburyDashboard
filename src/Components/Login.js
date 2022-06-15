@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import zellbury from '../images/OrientLogo.png';
+import gtech from '../images/logo.png'
 
 
 function Form() {
+
+    const current = new Date();
+    const currentYear = current.getFullYear();
+    const nextYear = current.getFullYear() + 1;
 
     // login 
     const navigate = useNavigate();
@@ -77,18 +83,19 @@ function Form() {
 
                     <div className="row align-items-center justify-content-md-center h-p100">
 
-                        <div className="col-12">
+                        <div className="col-12 ">
                             <div className="row no-gutters">
-                                <div className="col-lg-4 col-md-5 col-12 col-sm-3  mx-auto">
+                                <div className="col-lg-4 col-md-6 col-12 col-sm-3  mx-auto">
                                     <div className="content-top-agile p-10">
-                                        <h2>Zellbury</h2>
+                                        <span className="light-logo"><img src={zellbury} width="100px" alt="logo" /></span>
                                         <h4>Login To Start Your Session</h4>
-                                        <h6 className='text-danger dis'>Wrong Password Or User Name</h6>
+
                                     </div>
-                                    <div className="p-30 content-bottom rounded bg-img box-shadowed"
+                                    <div className="p-30 content-bottom rounded  box-shadowed form_Background"
                                         data-overlay="8">
                                         {/* <form action="../index.html" method="post" > */}
-                                        <form onSubmit={handleLoginSubmit}>
+
+                                        <form onSubmit={handleLoginSubmit} >
                                             <div className="form-group">
                                                 <div className="input-group mb-3">
                                                     <div className="input-group-prepend">
@@ -123,12 +130,16 @@ function Form() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="text-center">
-                                                <input type="submit" className="btn btn-primary" />
+                                            <div className="text-center mb-5">
+                                                <input type="submit" className="btn btn-info btn-block margin-top-10" value="SIGN IN" />
                                             </div>
 
+                                            <br />
+                                            <div style={{display:'flex', alignItems:'center',justifyContent:'space-between'}}>
+                                                <div className="label " style={{ color: 'white', fontWeight: 600, fontFamily: 'Calibri', fontSize: '13px', marginTop: '10px' }} id="copyrightOutput">© {currentYear}-{nextYear}  AL RAHIM RETAIL LTD</div>
+                                                <span className="light-logo"><img src={gtech} width="100px" alt="logo" /></span>
 
-
+                                            </div>
                                         </form>
 
 
@@ -141,6 +152,7 @@ function Form() {
                     </div>
                 </div>
             </section>
+
         </>
 
     )

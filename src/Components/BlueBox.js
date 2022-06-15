@@ -20,16 +20,16 @@ const BlueBox = ({ isLoading, blueBoxData }) => {
                             </div>
                             <div className="p-15">
                                 <div className="font-size-16 flexbox align-items-center">
-                                    <span> <label style={{ fontSize: '1.3em' }} cssclass="text-bold"> Retail</label></span>
-                                    <span className="font-weight-bold"> <label id="tdySalesRtAmount" style={{ fontSize: '1.3em' }} cssclass="text-bold" />{(item._todayRt).toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
+                                    <span> <label style={{ fontSize: '1.4em' }} cssclass="text-bold"> Retail</label></span>
+                                    <span style={{ fontSize: '1.4em' }}> <label id="tdySalesRtAmount" cssclass="text-bold" />{(item._todayRt).toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
                                 </div>
                                 <div className="font-size-16 flexbox align-items-center" style={{ marginTop: '3%' }}>
-                                    <span> <label style={{ fontSize: '1.3em' }} cssclass="text-bold">Online</label></span>
-                                    <span className="font-weight-bold"> <label id="tdySalesOnlAmount" style={{ fontSize: '1.3em' }} cssclass="text-bold" />{(item._todayOn).toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
+                                    <span> <label style={{ fontSize: '1.4em' }} cssclass="text-bold">Online</label></span>
+                                    <span style={{ fontSize: '1.4em' }}> <label id="tdySalesOnlAmount" cssclass="text-bold" />{(item._todayOn).toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
                                 </div>
                                 <div className="font-size-16 flexbox align-items-center" style={{ marginTop: '3%' }}>
-                                    <span> <label style={{ fontSize: '1.3em' }} cssclass="text-bold">Wholesale</label></span>
-                                    <span className="font-weight-bold"> <label id="tdySalesWsAmount" style={{ fontSize: '1.3em' }} cssclass="text-bold" />{(item._todayWs).toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
+                                    <span> <label style={{ fontSize: '1.4em' }} cssclass="text-bold">Wholesale</label></span>
+                                    <span style={{ fontSize: '1.4em' }}> <label id="tdySalesWsAmount" cssclass="text-bold" />{(item._todayWs).toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
                                 </div>
                             </div>
                             <div className="icon text-white">
@@ -49,16 +49,16 @@ const BlueBox = ({ isLoading, blueBoxData }) => {
                             </div>
                             <div className="p-15">
                                 <div className="font-size-16 flexbox align-items-center">
-                                    <span> <label style={{ fontSize: '1.3em' }} cssclass="text-bold"> Retail</label></span>
-                                    <span className="font-weight-bold"> <label id="tdySalesRtAmount" style={{ fontSize: '1.3em' }} cssclass="text-bold" />{(item._yesterdayRt).toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
+                                    <span> <label style={{ fontSize: '1.4em' }} cssclass="text-bold"> Retail</label></span>
+                                    <span style={{ fontSize: '1.4em' }}> <label id="tdySalesRtAmount" cssclass="text-bold" />{(item._yesterdayRt).toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
                                 </div>
                                 <div className="font-size-16 flexbox align-items-center" style={{ marginTop: '3%' }}>
-                                    <span> <label style={{ fontSize: '1.3em' }} cssclass="text-bold">Online</label></span>
-                                    <span className="font-weight-bold"> <label id="tdySalesOnlAmount" style={{ fontSize: '1.3em' }} cssclass="text-bold" />{(item._yesterdayOn).toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
+                                    <span> <label style={{ fontSize: '1.4em' }} cssclass="text-bold">Online</label></span>
+                                    <span style={{ fontSize: '1.4em' }}> <label id="tdySalesOnlAmount" cssclass="text-bold" />{(item._yesterdayOn).toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
                                 </div>
                                 <div className="font-size-16 flexbox align-items-center" style={{ marginTop: '3%' }}>
-                                    <span> <label style={{ fontSize: '1.3em' }} cssclass="text-bold">Wholesale</label></span>
-                                    <span className="font-weight-bold"> <label id="tdySalesWsAmount" style={{ fontSize: '1.3em' }} cssclass="text-bold" />{(item._yesterdayWs).toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
+                                    <span> <label style={{ fontSize: '1.4em' }} cssclass="text-bold">Wholesale</label></span>
+                                    <span style={{ fontSize: '1.4em' }}> <label id="tdySalesWsAmount" cssclass="text-bold" />{(item._yesterdayWs).toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
                                 </div>
                             </div>
                             <div className="icon text-white">
@@ -78,16 +78,16 @@ const BlueBox = ({ isLoading, blueBoxData }) => {
                             </div>
                             <div className="p-15">
                                 <div className="font-size-16 flexbox align-items-center">
-                                    <span> <label style={{ fontSize: '1.3em' }} cssclass="text-bold"> Retail</label></span>
-                                    <span className="font-weight-bold"> <label id="tdySalesRtAmount" style={{ fontSize: '1.3em' }} cssclass="text-bold" />{(item._monthRt).toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
+                                    <span> <label style={{ fontSize: '1.4em' }} cssclass="text-bold"> Retail</label></span>
+                                    <span style={{ fontSize: '1.4em' }}> <label id="tdySalesRtAmount" cssclass="text-bold" />{(item._monthRt).toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
                                 </div>
                                 <div className="font-size-16 flexbox align-items-center" style={{ marginTop: '3%' }}>
-                                    <span> <label style={{ fontSize: '1.3em' }} cssclass="text-bold">Online</label></span>
-                                    <span className="font-weight-bold"> <label id="tdySalesOnlAmount" style={{ fontSize: '1.3em' }} cssclass="text-bold" />{(item._monthOn).toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
+                                    <span> <label style={{ fontSize: '1.4em' }} cssclass="text-bold">Online</label></span>
+                                    <span style={{ fontSize: '1.4em' }}> <label id="tdySalesOnlAmount" cssclass="text-bold" />{(item._monthOn).toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
                                 </div>
                                 <div className="font-size-16 flexbox align-items-center" style={{ marginTop: '3%' }}>
-                                    <span> <label style={{ fontSize: '1.3em' }} cssclass="text-bold">Wholesale</label></span>
-                                    <span className="font-weight-bold"> <label id="tdySalesWsAmount" style={{ fontSize: '1.3em' }} cssclass="text-bold" />{(item._monthWs).toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
+                                    <span> <label style={{ fontSize: '1.4em' }} cssclass="text-bold">Wholesale</label></span>
+                                    <span style={{ fontSize: '1.4em' }}> <label id="tdySalesWsAmount" cssclass="text-bold" />{(item._monthWs).toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
                                 </div>
                             </div>
                             <div className="icon text-white">
