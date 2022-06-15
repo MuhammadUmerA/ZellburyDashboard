@@ -445,6 +445,12 @@ function Dashboard() {
             setTimeout(() => {
                 Filter();
             }, 300000);
+            setTimeout(() => {
+                Filter();
+            }, 360000);
+            setTimeout(() => {
+                Filter();
+            }, 420000);
         }
 
 

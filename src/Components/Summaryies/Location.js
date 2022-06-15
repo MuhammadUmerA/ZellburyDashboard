@@ -92,7 +92,7 @@ function Location({ itemsLocation, isLoading, LocationLabelsHook, LocationValueH
 
 
 
-           <div className="dt-buttons btn-group " style={{marginTop:'20px'}}>
+            <div className="dt-buttons btn-group " style={{ marginTop: '20px' }}>
                 {/* copy btn */}
                 <button className="btn btn-secondary buttons-copy buttons-html5" tabIndex={0} aria-controls="DataTables_Table_0" onClick={copyTable}><span>Copy</span></button>
                 <CSVLink {...csvReport}>  <button className="btn btn-secondary buttons-csv buttons-html5" tabIndex={0} aria-controls="DataTables_Table_0"><span>CSV</span></button></CSVLink>
