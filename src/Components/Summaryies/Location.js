@@ -105,9 +105,9 @@ function Location({ itemsLocation, isLoading, LocationLabelsHook, LocationValueH
                     sheet="Location Summaryxls"
                     buttonText="Excel" />
             </div>
+            
+            <div className='myTbl mt-5'>
 
-            <div className='myTbl'>
-                <hr className="mx-1" />
 
                 <div className="row">
                     <div className="col-md-12 col-sm-12" >

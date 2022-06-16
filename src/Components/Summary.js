@@ -83,7 +83,7 @@ function Summary({ items, isLoading, previousYearMonthnetSale, monthlynetSale })
 
             <div className="row">
                 <div className="col-md-8 col-sm-12" >
-                    <div className="dt-buttons btn-group">
+                    <div className="dt-buttons btn-group " style={{ marginTop: '20px' }}>
                         <button className="btn btn-secondary buttons-copy buttons-html5" tabIndex={0} aria-controls="DataTables_Table_0" onClick={copyTable}><span>Copy</span></button>
                         <CSVLink {...csvReport}>  <button className="btn btn-secondary buttons-csv buttons-html5" tabIndex={0} aria-controls="DataTables_Table_0"><span>CSV</span></button></CSVLink>
 
@@ -91,14 +91,14 @@ function Summary({ items, isLoading, previousYearMonthnetSale, monthlynetSale })
                             id="test-table-xls-button"
                             className="download-table-xls-button btn btn-secondary buttons-excel buttons-html5 ml-1"
                             table="tableS"
-                            filename="Location Summary.xls"
-                            sheet="Location Summaryxls"
+                            filename="Sales Summary.xls"
+                            sheet="Sales Summaryxls"
                             buttonText="Excel" />
 
 
 
                     </div>
-
+                    <div className="mt-5"></div>
                     <div className="view">
                         <div className="wrapper">
                             <table className="table  table-hover table-bordered" id="tableS">
@@ -168,10 +168,62 @@ function Summary({ items, isLoading, previousYearMonthnetSale, monthlynetSale })
                 {/* chart */}
 
                 <div className='col-md-4 col-sm-12 mobile-margin'>
-                    <div className="container-fluid mb-5">
+                    <div className=" mb-5" id="MobNone">
                         <Chart
                             type="bar"
-                            width={395}
+                            width={375}
+                            height={420}
+                            series={[
+                                {
+                                    data: [previousYearMonthnetSale, monthlynetSale],
+                                },
+                            ]}
+                            options={{
+                                title: {
+                                    style: { fontSize: 13 },
+                                },
+                                theme: { mode: "light" },
+                                xaxis: {
+                                    categories: [
+                                        ChartDatePrevious,
+                                        ChartDate
+                                    ],
+                                    colors: ["#87CEEB"],
+                                },
+
+                                yaxis: {
+                                    labels: {
+
+                                        formatter: (val) => {
+                                            return `${val.toLocaleString()}`;
+                                        },
+
+                                        style: { fontSize: "10", colors: ["black"] },
+                                    },
+
+                                },
+
+                                legend: {
+                                    show: true,
+                                    position: "right",
+                                },
+
+                                dataLabels: {
+                                    formatter: (val) => {
+                                        return `${val.toLocaleString()}`;
+                                    },
+                                    style: {
+                                        colors: ["#f4f4f4"],
+                                        fontSize: 13,
+                                    },
+                                },
+                            }}
+                        ></Chart>
+                    </div>
+                    <div className="container-fluid mb-5" id="PcNone">
+                        <Chart
+                            type="bar"
+                            width={435}
                             height={420}
                             series={[
                                 {

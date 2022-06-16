@@ -196,11 +196,11 @@ function Dashboard() {
                 `https://posapi.gtech.com.pk/api/post/SummaryBoxes?api=qTpq3bVFho&DateFrom=${MounthDate}&dateTo=${date}&Region=${valRegion}&Location=${valLocation}
                 &Category=${valCategory}&Department=${valDepartment}&CoBrand=${value}&Channel=${valChannel}` //Endpoint and parameter or base Url
             )
-            // console.log(result.data)
+            
 
             setBlueBoxData(result.data)
 
-            setLoading(false) //stop loading when data is fetched
+            setLoading(false) 
 
         }
         getBlueBoxes()
@@ -212,13 +212,13 @@ function Dashboard() {
                 `https://posapi.gtech.com.pk/api/post/SalesSummary?api=qTpq3bVFho&DateFrom=${MounthDate}&dateTo=${date}&Region=${valRegion}&Location=${valLocation}
                 &Category=${valCategory}&Department=${valDepartment}&CoBrand=${value}&Channel=${valChannel}`
             )
-            // console.log(result.data)
+            
 
             setItems(result.data)//sets the data to appear 
 
             setMonthlynetSale(result.data[2].netSale)
             setPreviousYearMonthnetSale(result.data[4].netSale)
-            setLoading(false) //stop loading when data is fetched
+            setLoading(false) 
 
         }
         getSalesSummary()
@@ -232,7 +232,7 @@ function Dashboard() {
                 `https://posapi.gtech.com.pk/api/post/LocationSummary?api=qTpq3bVFho&DateFrom=${MounthDate}&dateTo=${date}&Region=${valRegion}&Location=${valLocation}
                 &Category=${valCategory}&Department=${valDepartment}&CoBrand=${value}&Channel=${valChannel}`
             )
-            // console.log(result.data)
+            
 
 
 
@@ -244,7 +244,7 @@ function Dashboard() {
             setLocationValueHook(LocationValue);
             // console.log(LocationValueHook);
             setItemsLocation(result.data)//sets the data to appear 
-            setLoading(false) //stop loading when data is fetched
+            setLoading(false) 
         }
         getLocationSummary()
         //Category
@@ -254,7 +254,7 @@ function Dashboard() {
                 `https://posapi.gtech.com.pk/api/post/CategorySummary?api=qTpq3bVFho&DateFrom=${MounthDate}&dateTo=${date}&Region=${valRegion}&Location=${valLocation}
                 &Category=${valCategory}&Department=${valDepartment}&CoBrand=${value}&Channel=${valChannel}`
             )
-            // console.log(result.data)
+            
 
             setItemsCategory(result.data)//sets the data to appear 
             for (let i = 0; i < result.data.length; i++) {
@@ -263,7 +263,7 @@ function Dashboard() {
             }
             setCategorylabelHook(Categorylabel);
             setCategoryValueHook(CategoryValue);
-            setLoading(false) //stop loading when data is fetched
+            setLoading(false) 
 
         }
         getItemsCategory()
@@ -276,7 +276,7 @@ function Dashboard() {
                 `https://posapi.gtech.com.pk/api/post/coBrandSummary?api=qTpq3bVFho&DateFrom=${MounthDate}&dateTo=${date}&Region=${valRegion}&Location=${valLocation}
                 &Category=${valCategory}&Department=${valDepartment}&CoBrand=${value}&Channel=${valChannel}`
             )
-            // console.log(result.data)
+            
 
             setItemsCoBrand(result.data)//sets the data to appear 
 
@@ -288,7 +288,7 @@ function Dashboard() {
             }
             setCoBrandlabelHook(CoBrandlabel);
             setCoBrandValueHook(CoBrandValue);
-            setLoading(false) //stop loading when data is fetched
+            setLoading(false) 
 
 
         }
@@ -299,7 +299,7 @@ function Dashboard() {
                 `https://posapi.gtech.com.pk/api/post/departmentSummary?api=qTpq3bVFho&DateFrom=${MounthDate}&dateTo=${date}&Region=${valRegion}&Location=${valLocation}
                 &Category=${valCategory}&Department=${valDepartment}&CoBrand=${value}&Channel=${valChannel}` //Endpoint and parameter or base Url
             )
-            // console.log(result.data)
+            
 
             setItemsDepartment(result.data)//sets the data to appear
 
@@ -309,7 +309,7 @@ function Dashboard() {
             }
             setDepartmentlabelHook(Departmentlabel);
             setDepartmentValueHook(DepartmentValue);
-            setLoading(false) //stop loading when data is fetched
+            setLoading(false) 
 
         }
         getItemsDepartment()
@@ -321,7 +321,7 @@ function Dashboard() {
                 `https://posapi.gtech.com.pk/api/post/Attribute2Summary?api=qTpq3bVFho&DateFrom=${MounthDate}&dateTo=${date}&Region=${valRegion}&Location=${valLocation}
                 &Category=${valCategory}&Department=${valDepartment}&CoBrand=${value}&Channel=${valChannel}`
             )
-            // console.log(result.data)
+            
 
             setItemsProduction(result.data)//sets the data to appear 
 
@@ -332,7 +332,7 @@ function Dashboard() {
             }
             setProductionlabelHook(Productionlabel);
             setProductionValueHook(ProductionValue);
-            setLoading(false) //stop loading when data is fetched
+            setLoading(false) 
 
             // console.log(ProductionValue);
         }
@@ -347,10 +347,10 @@ function Dashboard() {
             const result = await axios(
                 `https://posapi.gtech.com.pk/api/post/GetDropDownList?api=qTpq3bVFho&Filter=Region&User=1157-ZAREEN` //Endpoint and parameter or base Url
             )
-            // console.log(result.data)
+            
 
             setRegion(result.data)//sets the data to appear 
-            // setLoading(false) //stop loading when data is fetched
+           
 
 
         }
@@ -360,10 +360,10 @@ function Dashboard() {
             const result = await axios(
                 `https://posapi.gtech.com.pk/api/post/GetDropDownList?api=qTpq3bVFho&Filter=Location` //Endpoint and parameter or base Url
             )
-            // console.log(result.data)
+            
 
             setLocationitems(result.data)//sets the data to appear 
-            // setLoading(false) //stop loading when data is fetched
+           
 
 
         }
@@ -375,10 +375,10 @@ function Dashboard() {
             const result = await axios(
                 `https://posapi.gtech.com.pk/api/post/GetDropDownList?api=qTpq3bVFho&Filter=Category` //Endpoint and parameter or base Url
             )
-            // console.log(result.data)
+            
 
             setCategory(result.data)//sets the data to appear 
-            // setLoading(false) //stop loading when data is fetched
+           
 
 
         }
@@ -390,10 +390,10 @@ function Dashboard() {
             const result = await axios(
                 `https://posapi.gtech.com.pk/api/post/GetDropDownList?api=qTpq3bVFho&Filter=Department` //Endpoint and parameter or base Url
             )
-            // console.log(result.data)
+            
 
             setDepartment(result.data)//sets the data to appear 
-            // setLoading(false) //stop loading when data is fetched
+           
 
         }
         getDepartment()
@@ -403,23 +403,14 @@ function Dashboard() {
             const result = await axios(
                 `https://posapi.gtech.com.pk/api/post/GetDropDownList?api=qTpq3bVFho&Filter=CoBrand` //Endpoint and parameter or base Url
             )
-            // console.log(result.data)
+            
 
             setCoBrand(result.data)//sets the data to appear 
-            // setLoading(false) //stop loading when data is fetched
+           
 
         }
         getCoBrand()
 
-        // sesson over
-
-        const sessonOver = () => {
-            setTimeout(() => {
-                navigate('/Login');
-            }, 1800000);
-        }
-
-        sessonOver()
         // auto refresh
 
         if (!show) {
@@ -427,34 +418,70 @@ function Dashboard() {
                 Filter();
             }, 600000000);
         }
-
-
         if (show) {
-            setTimeout(() => {
-                Filter();
-            }, 60000);
             setTimeout(() => {
                 Filter();
             }, 120000);
             setTimeout(() => {
                 Filter();
-            }, 180000);
-            setTimeout(() => {
-                Filter();
             }, 240000);
-            setTimeout(() => {
-                Filter();
-            }, 300000);
             setTimeout(() => {
                 Filter();
             }, 360000);
             setTimeout(() => {
                 Filter();
-            }, 420000);
+            }, 480000);
+            setTimeout(() => {
+                Filter();
+            }, 600000);
+            setTimeout(() => {
+                Filter();
+            }, 720000);
+            setTimeout(() => {
+                Filter();
+            }, 840000);
+            setTimeout(() => {
+                Filter();
+            }, 960000);
+            setTimeout(() => {
+                Filter();
+            }, 1080000);
+            setTimeout(() => {
+                Filter();
+            }, 1200000);
+            setTimeout(() => {
+                Filter();
+            }, 1320000);
+            setTimeout(() => {
+                Filter();
+            }, 1440000);
+            setTimeout(() => {
+                Filter();
+            }, 1560000);
+            setTimeout(() => {
+                Filter();
+            }, 1680000);
+            setTimeout(() => {
+                Filter();
+            }, 1800000);
+            setTimeout(() => {
+                Filter();
+            }, 1920000);
+            setTimeout(() => {
+                Filter();
+            }, 2040000);
+            setTimeout(() => {
+                Filter();
+            }, 2160000);
+            setTimeout(() => {
+                Filter();
+            }, 2280000);
         }
 
 
+
     }, [])//when we use useEffect we put dependency as a second paramers
+
 
     // Refresh Btn
     const ReFresh = async () => {
@@ -770,27 +797,28 @@ function Dashboard() {
                             {/* Summary */}
                             <div className="cont">
                                 <div className="contain containMobile">
-                                    <div className='myTbl'>
+                                    <div className='myTbl' >
                                         <h3 className="page-title mar">Summary</h3>
-                                        <hr className="mx-1" />
+                                        <hr className="mx-1 " />
                                         <Summary isLoading={isLoading} items={items} monthlynetSale={monthlynetSale} previousYearMonthnetSale={previousYearMonthnetSale} />
 
                                     </div>
                                 </div>
                                 {/* tabs */}
 
-                                <div className="contain bg-white  mt-5">
+                                <div className="contain bg-white  p-10" >
                                     <ul className="nav nav-tabs" id="myTab" role="tablist">
-                                        <li className="nav-item"> <a onClick={() => toggleTab(1)} className="nav-link active pointer" data-toggle="tab"><span className="hidden-sm-up">Location</span> <span className="hidden-xs-down">Location</span></a> </li>
-                                        <li className="nav-item"> <a onClick={() => toggleTab(2)} className="nav-link pointer" data-toggle="tab"><span className="hidden-sm-up">Region</span> <span className="hidden-xs-down">Region</span></a></li>
-                                        <li className="nav-item"> <a onClick={() => toggleTab(3)} className="nav-link pointer" data-toggle="tab" ><span className="hidden-sm-up">CoBrand</span> <span className="hidden-xs-down">CoBrand</span></a></li>
-                                        <li className="nav-item"> <a onClick={() => toggleTab(4)} className="nav-link pointer" data-toggle="tab"><span className="hidden-sm-up">Department</span> <span className="hidden-xs-down">Department</span></a></li>
-                                        <li className="nav-item"> <a onClick={() => toggleTab(5)} className="nav-link pointer" data-toggle="tab" ><span className="hidden-sm-up">Category</span> <span className="hidden-xs-down">Category</span></a></li>
-                                        <li className="nav-item"> <a onClick={() => toggleTab(6)} className="nav-link pointer" data-toggle="tab"><span className="hidden-sm-up">ProductionYear</span> <span className="hidden-xs-down">ProductionYear</span></a></li>
-                                        <li className="nav-item"> <a onClick={() => toggleTab(7)} className="nav-link pointer" data-toggle="tab" ><span className="hidden-sm-up">Top 10 Designs</span> <span className="hidden-xs-down">Top 10 Designs</span></a></li>
+                                        <li className="nav-item m-mob"> <a onClick={() => toggleTab(1)} className="nav-link active pointer" data-toggle="tab"><span className="hidden-sm-up">Location</span> <span className="hidden-xs-down">Location</span></a> </li>
+                                        <li className="nav-item m-mob"> <a onClick={() => toggleTab(2)} className="nav-link pointer" data-toggle="tab"><span className="hidden-sm-up">Region</span> <span className="hidden-xs-down">Region</span></a></li>
+                                        <li className="nav-item m-mob"> <a onClick={() => toggleTab(3)} className="nav-link pointer" data-toggle="tab" ><span className="hidden-sm-up">CoBrand</span> <span className="hidden-xs-down">CoBrand</span></a></li>
+                                        <li className="nav-item m-mob"> <a onClick={() => toggleTab(4)} className="nav-link pointer" data-toggle="tab"><span className="hidden-sm-up">Department</span> <span className="hidden-xs-down">Department</span></a></li>
+                                        <li className="nav-item m-mob"> <a onClick={() => toggleTab(5)} className="nav-link pointer" data-toggle="tab" ><span className="hidden-sm-up">Category</span> <span className="hidden-xs-down">Category</span></a></li>
+                                        <li className="nav-item m-mob"> <a onClick={() => toggleTab(6)} className="nav-link pointer" data-toggle="tab"><span className="hidden-sm-up">ProductionYear</span> <span className="hidden-xs-down">ProductionYear</span></a></li>
+                                        <li className="nav-item m-mob"> <a onClick={() => toggleTab(7)} className="nav-link pointer" data-toggle="tab" ><span className="hidden-sm-up">Top 10 Designs</span> <span className="hidden-xs-down">Top 10 Designs</span></a></li>
                                     </ul>
                                     <div className={toggleState === 1 ? "content-active" : "content-inactive"}>
                                         <h4 className='mt-4'>Location Summary</h4>
+                                        <hr className="mx-1" />
                                         <Location isLoading={isLoading} itemsLocation={itemsLocation} LocationLabelsHook={LocationLabelsHook} LocationValueHook={LocationValueHook} />
                                     </div>
                                     <div className={toggleState === 2 ? "content-active" : "content-inactive"}>

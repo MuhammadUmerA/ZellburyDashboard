@@ -92,6 +92,7 @@ function CoBrand({ isLoading, itemsCoBrand, CoBrandlabelHook, CoBrandValueHook }
             {/* COPY MODAL */}
             <div id="datatables_buttons_info" className={`dt-button-info ${CopyModal}`} style={{}}><h2>Copy to clipboard</h2><div>{`Copied ${CopyModalData} rows to clipboard`}</div></div>
             <h4 className='mt-4'>CoBrand Summary</h4>
+            <hr className="mx-1" />
 
            <div className="dt-buttons btn-group " style={{marginTop:'20px'}}>
                 <button className="btn btn-secondary buttons-copy buttons-html5" tabIndex={0} aria-controls="DataTables_Table_0" onClick={copyTable}><span>Copy</span></button>
@@ -108,8 +109,8 @@ function CoBrand({ isLoading, itemsCoBrand, CoBrandlabelHook, CoBrandValueHook }
 
 
             </div>
-            <div className='myTbl'>
-                <hr className="mx-1" />
+            <div className='myTbl mt-5'>
+               
 
                 <div className="row">
                     <div className="col-md-12 col-sm-12" >
