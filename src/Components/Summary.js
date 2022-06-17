@@ -99,12 +99,12 @@ function Summary({ items, isLoading, previousYearMonthnetSale, monthlynetSale })
 
                     </div>
                     <div className="mt-5"></div>
-                    <div className="view">
-                        <div className="wrapper">
+                    <div className="viewSalesSummary">
+                        <div className="wrapperSalesSummary">
                             <table className="table  table-hover table-bordered" id="tableS">
-                                <thead id="tom">
+                                <thead >
                                     <tr>
-                                        <th className="sticky-col first-col2 coltm4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                        <th className="sticky-colSalesSummary first-col2SalesSummary coltm4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
 
                                         <th className="coltm4">Gross&nbsp;Sale</th>
 
@@ -128,7 +128,7 @@ function Summary({ items, isLoading, previousYearMonthnetSale, monthlynetSale })
                                     {items.map((item, index) => (   //here we map through the items
                                         <tr className='bg-white' key={index}>
 
-                                            <td className="sticky-col first-col">{item.description}</td>
+                                            <td className="sticky-colSalesSummary first-colSalesSummary">{item.description}</td>
 
 
                                             <td className="text-center ind">{(item.grossSale).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
@@ -220,7 +220,8 @@ function Summary({ items, isLoading, previousYearMonthnetSale, monthlynetSale })
                             }}
                         ></Chart>
                     </div>
-                    <div className="container-fluid mb-5" id="PcNone">
+                    <div className=" mb-5" id="PcNone">
+                        <br />
                         <Chart
                             type="bar"
                             width={435}
@@ -250,7 +251,7 @@ function Summary({ items, isLoading, previousYearMonthnetSale, monthlynetSale })
                                             return `${val.toLocaleString()}`;
                                         },
 
-                                        style: { fontSize: "11", colors: ["black"] },
+                                        style: { fontSize: "12", fontWeight: "Bold", colors: ["black"] },
                                     },
 
                                 },
@@ -266,7 +267,7 @@ function Summary({ items, isLoading, previousYearMonthnetSale, monthlynetSale })
                                     },
                                     style: {
                                         colors: ["#f4f4f4"],
-                                        fontSize: 13,
+                                        fontSize: 14,
                                     },
                                 },
                             }}

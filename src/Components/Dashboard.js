@@ -496,18 +496,12 @@ function Dashboard() {
         SetApiToDefault();
         SetApiToDefault();
         Filter();
-
     }
-
     return (
         <>
-
-
             <div className="skin-info dark-sidebar sidebar-mini pace-done sidebar-collapse dashboardWidth">
                 {/* {/* Site wrapper  */}
                 <div className="wrapper">
-
-
                     <header className="main-header">
                         {/* Logo  */}
                         <a className="logo">
@@ -535,13 +529,11 @@ function Dashboard() {
                                     <i className="ti-align-left"></i>
                                 </a>
                             </div>
-
                             <div className="navbar-custom-menu r-side">
                                 <ul className="nav navbar-nav" >
                                     {/* Messages  */}
                                     <li className="dropdown messages-menu" >
                                         <a href="#" className="dropdown-toggle" data-toggle="dropdown">
-
                                         </a>
                                         <ul className="dropdown-menu animated bounceIn">
                                             <li>
@@ -556,11 +548,10 @@ function Dashboard() {
                                                             </div>
                                                             <div className="mail-contnet">
                                                                 <h4>
-                                                                    Lorem Ipsum
-                                                                    <small><i className="fa fa-clock-o"></i> 15 mins</small>
+                                                                 Lorem Ipsum
+                                                                    <small><i className="fa fa-clock-o"></i> </small>
                                                                 </h4>
-                                                                <span>Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                                    elit.</span>
+                                                                <span></span>
                                                             </div>
                                                         </a>
                                                     </li>
@@ -568,7 +559,7 @@ function Dashboard() {
                                                 </ul>
                                             </li>
                                             <li className="footer">
-                                                <a href="#" className="bg-light">See all e-Mails</a>
+                                                <a href="#" className="bg-light"></a>
                                             </li>
                                         </ul>
                                     </li>
@@ -707,10 +698,8 @@ function Dashboard() {
                                                             <option value="">&lt;--Select Location--&gt;</option>
                                                             {Locationitems.map((param) => (   //here we map through the items                                                                
                                                                 <option key={param.code} value={param.code}>{param.name}</option>
-
                                                             ))}
                                                         </select>
-
                                                     </div>
                                                     {/* /.form-group */}
                                                 </div>
@@ -721,14 +710,11 @@ function Dashboard() {
                                                             <option value="">&lt;--Select Category--&gt;</option>
                                                             {category.map((param) => (   //here we map through the items                                                                
                                                                 <option key={param.code} value={param.code}>{param.name}</option>
-
                                                             ))}
                                                         </select>
                                                     </div>
                                                     {/* /.form-group */}
                                                 </div>
-
-
                                             </div>
                                             <div className='row '>
                                                 <div className="col-md-4 col-12">
@@ -738,7 +724,6 @@ function Dashboard() {
                                                             <option value="">&lt;--Select Department--&gt;</option>
                                                             {department.map((param) => (   //here we map through the items                                                                
                                                                 <option key={param.code} value={param.code}>{param.name}</option>
-
                                                             ))}
                                                         </select>
                                                     </div>
@@ -751,7 +736,6 @@ function Dashboard() {
                                                             <option value="">&lt;--Select CoBrand--&gt;</option>
                                                             {coBrand.map((param) => (   //here we map through the items                                                                
                                                                 <option key={param.code} value={param.code}>{param.name}</option>
-
                                                             ))}
                                                         </select>
                                                     </div>
@@ -770,8 +754,6 @@ function Dashboard() {
                                                     </div>
                                                     {/* /.form-group */}
                                                 </div>
-
-
                                             </div>
 
                                             <div className="box-footer flexbox">
@@ -785,14 +767,12 @@ function Dashboard() {
                                     </div>
                                 </div>
                                 {/* Filters */}
-
                                 <div className="f5">
 
                                     <div className="contaiin bot mb-5">
                                         <BlueBox isLoading={isLoading} blueBoxData={blueBoxData} />
                                     </div>
                                 </div>
-
                             </section>
                             {/* Summary */}
                             <div className="cont">
@@ -801,11 +781,9 @@ function Dashboard() {
                                         <h3 className="page-title mar">Summary</h3>
                                         <hr className="mx-1 " />
                                         <Summary isLoading={isLoading} items={items} monthlynetSale={monthlynetSale} previousYearMonthnetSale={previousYearMonthnetSale} />
-
                                     </div>
                                 </div>
                                 {/* tabs */}
-
                                 <div className="contain bg-white  p-10" >
                                     <ul className="nav nav-tabs" id="myTab" role="tablist">
                                         <li className="nav-item m-mob"> <a onClick={() => toggleTab(1)} className="nav-link active pointer" data-toggle="tab"><span className="hidden-sm-up">Location</span> <span className="hidden-xs-down">Location</span></a> </li>
@@ -823,7 +801,6 @@ function Dashboard() {
                                     </div>
                                     <div className={toggleState === 2 ? "content-active" : "content-inactive"}>
                                         <Region />
-
                                     </div>
                                     <div className={toggleState === 3 ? "content-active" : "content-inactive"}>
                                         <CoBrand isLoading={isLoading} itemsCoBrand={itemsCoBrand} CoBrandValueHook={CoBrandValueHook} CoBrandlabelHook={CoBrandlabelHook} />
@@ -858,7 +835,5 @@ function Dashboard() {
             </div>
         </>
     )
-
 }
-
 export default Dashboard
