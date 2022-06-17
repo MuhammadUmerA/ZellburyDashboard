@@ -476,10 +476,25 @@ function Dashboard() {
             setTimeout(() => {
                 Filter();
             }, 2280000);
+            setTimeout(() => {
+                Filter();
+            }, 2400000);
+            setTimeout(() => {
+                Filter();
+            }, 2520000);
+            setTimeout(() => {
+                Filter();
+            }, 2640000);
+            setTimeout(() => {
+                Filter();
+            }, 2760000);
+            setTimeout(() => {
+                Filter();
+            }, 2880000);
+            setTimeout(() => {
+                Filter();
+            }, 3000000);
         }
-
-
-
     }, [])//when we use useEffect we put dependency as a second paramers
 
 
