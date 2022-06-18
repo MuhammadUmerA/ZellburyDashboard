@@ -128,7 +128,7 @@ function Category({ itemsCategory, isLoading, CategoryValueHook, CategorylabelHo
                 <div className="row">
                     <div className="col-md-12 col-sm-12" >
                         <div className="view">
-                            <div className="wrapper">
+                     
                                 <table className="table  table-hover table-bordered" id="table-Category">
                                     <thead id="tom">
                                         <tr>
@@ -186,7 +186,11 @@ function Category({ itemsCategory, isLoading, CategoryValueHook, CategorylabelHo
                                         ))}
 
 
-                                        <tr id="total-border">
+                                        
+
+                                    </tbody>
+                                    <tfoot>
+                                    <tr >
                                             <td className="sticky-col first-col" id="color">Total</td>
 
                                             <td id="color" style={{ textAlign: "center" }}>{(idSum).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
@@ -210,16 +214,15 @@ function Category({ itemsCategory, isLoading, CategoryValueHook, CategorylabelHo
                                             <td id="color" style={{ textAlign: "center" }}>{(idSumGp).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
 
                                         </tr>
-
-                                    </tbody>
+                                    </tfoot>
                                 </table>
 
 
 
-                            </div>
+                         
                         </div>
 
-
+                        <hr className="new1"/>
 
                     </div>
 

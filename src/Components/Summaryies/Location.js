@@ -105,89 +105,90 @@ function Location({ itemsLocation, isLoading, LocationLabelsHook, LocationValueH
                     sheet="Location Summaryxls"
                     buttonText="Excel" />
             </div>
-            
+
             <div className='myTbl mt-5'>
 
 
                 <div className="row">
                     <div className="col-md-12 col-sm-12" >
                         <div className="view">
-                            <div className="wrapper">
-                                <table className="table  table-hover table-bordered vertical-scrollable" id="Location-table-to-xls">
-                                    <thead id="tom">
-                                        <tr>
-                                            <th className="sticky-col first-col2 coltm4">Location Name</th>
 
-                                            <th className="coltm4">Today</th>
+                            <table className="table  table-hover table-bordered vertical-scrollable" id="Location-table-to-xls">
+                                <thead id="tom">
+                                    <tr>
+                                        <th className="sticky-col first-col2 coltm4">Location Name</th>
 
-                                            <th className="coltm4">Yesterday</th>
+                                        <th className="coltm4">Today</th>
 
-                                            <th className="coltm4">Monthly</th>
+                                        <th className="coltm4">Yesterday</th>
 
-                                            <th className="coltm4">Previous Month</th>
+                                        <th className="coltm4">Monthly</th>
 
-                                            <th className="coltm4">Gross Sale</th>
+                                        <th className="coltm4">Previous Month</th>
 
-                                            <th className="coltm4">GP Margin</th>
+                                        <th className="coltm4">Gross Sale</th>
 
-                                            <th className="coltm4">SQFeetYeild</th>
+                                        <th className="coltm4">GP Margin</th>
 
-                                            <th className="coltm4">RentRevenueRatio</th>
+                                        <th className="coltm4">SQFeetYeild</th>
+
+                                        <th className="coltm4">RentRevenueRatio</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="some" id="dome" style={{}}>
+
+                                    {itemsLocation.map((item, index) => (   //here we map through the items
+                                        <tr className='bg-white' key={index}>
+
+                                            <td className="sticky-col first-col">{item.locationName}</td>
+
+
+                                            <td className="text-center ind">{(item.today).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+
+                                            <td className="text-center ind">{(item.yesterday).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+
+                                            <td className="text-center ind">{(item.monthly).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+
+                                            <td className="text-center ind">{(item.previous).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+
+                                            <td className="text-center ind">{(item.grossSale).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+
+                                            <td className="text-center ind">{(item.gpMargin).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+
+                                            <td className="text-center ind">{(item.sqFeetYeild).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+
+                                            <td className="text-center ind">{(item.rentRevenueRatio).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+
+                                            {/* <td className="text-center ind">{item.reduce((acc, curr) => acc + curr.today, 0)}</td> */}
                                         </tr>
-                                    </thead>
-                                    <tbody className="some" id="dome" style={{}}>
+                                    ))}
+                                </tbody>
+                                <tfoot >
 
-                                        {itemsLocation.map((item, index) => (   //here we map through the items
-                                            <tr className='bg-white' key={index}>
+                                    <tr className="">
 
-                                                <td className="sticky-col first-col">{item.locationName}</td>
+                                        <td className="sticky-col first-col" id="color" >Total</td>
 
+                                        <td id="color" style={{ textAlign: "center" }}>{(idSum).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+                                        <td id="color" style={{ textAlign: "center" }}>{(idSumYes).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+                                        <td id="color" style={{ textAlign: "center" }}>{(idSumMon).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+                                        <td id="color" style={{ textAlign: "center" }}>{(idSumprevious).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+                                        <td id="color" style={{ textAlign: "center" }}>{(idSumGrossSale).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+                                        <td id="color" style={{ textAlign: "center" }}>{(idSumGp).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+                                        <td id="color" style={{ textAlign: "center" }}>{(idSQFeetYeild).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+                                        <td id="color" style={{ textAlign: "center" }}>{(idRentRevenueRatio).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
 
-                                                <td className="text-center ind">{(item.today).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
 
-                                                <td className="text-center ind">{(item.yesterday).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
-
-                                                <td className="text-center ind">{(item.monthly).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
-
-                                                <td className="text-center ind">{(item.previous).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
-
-                                                <td className="text-center ind">{(item.grossSale).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
-
-                                                <td className="text-center ind">{(item.gpMargin).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
-
-                                                <td className="text-center ind">{(item.sqFeetYeild).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
-
-                                                <td className="text-center ind">{(item.rentRevenueRatio).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
-
-                                                {/* <td className="text-center ind">{item.reduce((acc, curr) => acc + curr.today, 0)}</td> */}
-                                            </tr>
-                                        ))}
-
-                                        <tr id="total-border">
-
-                                            <td className="sticky-col first-col" id="color">Total</td>
-
-                                            <td id="color" style={{ textAlign: "center" }}>{(idSum).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
-                                            <td id="color" style={{ textAlign: "center" }}>{(idSumYes).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
-                                            <td id="color" style={{ textAlign: "center" }}>{(idSumMon).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
-                                            <td id="color" style={{ textAlign: "center" }}>{(idSumprevious).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
-                                            <td id="color" style={{ textAlign: "center" }}>{(idSumGrossSale).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
-                                            <td id="color" style={{ textAlign: "center" }}>{(idSumGp).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
-                                            <td id="color" style={{ textAlign: "center" }}>{(idSQFeetYeild).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
-                                            <td id="color" style={{ textAlign: "center" }}>{(idRentRevenueRatio).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
-
-                                        </tr>
-
-
-
-
-                                    </tbody>
-                                </table>
-
-
-
-                            </div>
                         </div>
+                            <hr className="new1"/>
+
+
+
+
+
                     </div>
 
                 </div>

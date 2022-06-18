@@ -196,11 +196,11 @@ function Dashboard() {
                 `https://posapi.gtech.com.pk/api/post/SummaryBoxes?api=qTpq3bVFho&DateFrom=${MounthDate}&dateTo=${date}&Region=${valRegion}&Location=${valLocation}
                 &Category=${valCategory}&Department=${valDepartment}&CoBrand=${value}&Channel=${valChannel}` //Endpoint and parameter or base Url
             )
-            
+
 
             setBlueBoxData(result.data)
 
-            setLoading(false) 
+            setLoading(false)
 
         }
         getBlueBoxes()
@@ -212,13 +212,13 @@ function Dashboard() {
                 `https://posapi.gtech.com.pk/api/post/SalesSummary?api=qTpq3bVFho&DateFrom=${MounthDate}&dateTo=${date}&Region=${valRegion}&Location=${valLocation}
                 &Category=${valCategory}&Department=${valDepartment}&CoBrand=${value}&Channel=${valChannel}`
             )
-            
+
 
             setItems(result.data)//sets the data to appear 
 
             setMonthlynetSale(result.data[2].netSale)
             setPreviousYearMonthnetSale(result.data[4].netSale)
-            setLoading(false) 
+            setLoading(false)
 
         }
         getSalesSummary()
@@ -232,7 +232,7 @@ function Dashboard() {
                 `https://posapi.gtech.com.pk/api/post/LocationSummary?api=qTpq3bVFho&DateFrom=${MounthDate}&dateTo=${date}&Region=${valRegion}&Location=${valLocation}
                 &Category=${valCategory}&Department=${valDepartment}&CoBrand=${value}&Channel=${valChannel}`
             )
-            
+
 
 
 
@@ -244,7 +244,7 @@ function Dashboard() {
             setLocationValueHook(LocationValue);
             // console.log(LocationValueHook);
             setItemsLocation(result.data)//sets the data to appear 
-            setLoading(false) 
+            setLoading(false)
         }
         getLocationSummary()
         //Category
@@ -254,7 +254,7 @@ function Dashboard() {
                 `https://posapi.gtech.com.pk/api/post/CategorySummary?api=qTpq3bVFho&DateFrom=${MounthDate}&dateTo=${date}&Region=${valRegion}&Location=${valLocation}
                 &Category=${valCategory}&Department=${valDepartment}&CoBrand=${value}&Channel=${valChannel}`
             )
-            
+
 
             setItemsCategory(result.data)//sets the data to appear 
             for (let i = 0; i < result.data.length; i++) {
@@ -263,7 +263,7 @@ function Dashboard() {
             }
             setCategorylabelHook(Categorylabel);
             setCategoryValueHook(CategoryValue);
-            setLoading(false) 
+            setLoading(false)
 
         }
         getItemsCategory()
@@ -276,7 +276,7 @@ function Dashboard() {
                 `https://posapi.gtech.com.pk/api/post/coBrandSummary?api=qTpq3bVFho&DateFrom=${MounthDate}&dateTo=${date}&Region=${valRegion}&Location=${valLocation}
                 &Category=${valCategory}&Department=${valDepartment}&CoBrand=${value}&Channel=${valChannel}`
             )
-            
+
 
             setItemsCoBrand(result.data)//sets the data to appear 
 
@@ -288,7 +288,7 @@ function Dashboard() {
             }
             setCoBrandlabelHook(CoBrandlabel);
             setCoBrandValueHook(CoBrandValue);
-            setLoading(false) 
+            setLoading(false)
 
 
         }
@@ -299,7 +299,7 @@ function Dashboard() {
                 `https://posapi.gtech.com.pk/api/post/departmentSummary?api=qTpq3bVFho&DateFrom=${MounthDate}&dateTo=${date}&Region=${valRegion}&Location=${valLocation}
                 &Category=${valCategory}&Department=${valDepartment}&CoBrand=${value}&Channel=${valChannel}` //Endpoint and parameter or base Url
             )
-            
+
 
             setItemsDepartment(result.data)//sets the data to appear
 
@@ -309,7 +309,7 @@ function Dashboard() {
             }
             setDepartmentlabelHook(Departmentlabel);
             setDepartmentValueHook(DepartmentValue);
-            setLoading(false) 
+            setLoading(false)
 
         }
         getItemsDepartment()
@@ -321,7 +321,7 @@ function Dashboard() {
                 `https://posapi.gtech.com.pk/api/post/Attribute2Summary?api=qTpq3bVFho&DateFrom=${MounthDate}&dateTo=${date}&Region=${valRegion}&Location=${valLocation}
                 &Category=${valCategory}&Department=${valDepartment}&CoBrand=${value}&Channel=${valChannel}`
             )
-            
+
 
             setItemsProduction(result.data)//sets the data to appear 
 
@@ -332,7 +332,7 @@ function Dashboard() {
             }
             setProductionlabelHook(Productionlabel);
             setProductionValueHook(ProductionValue);
-            setLoading(false) 
+            setLoading(false)
 
             // console.log(ProductionValue);
         }
@@ -347,10 +347,10 @@ function Dashboard() {
             const result = await axios(
                 `https://posapi.gtech.com.pk/api/post/GetDropDownList?api=qTpq3bVFho&Filter=Region&User=1157-ZAREEN` //Endpoint and parameter or base Url
             )
-            
+
 
             setRegion(result.data)//sets the data to appear 
-           
+
 
 
         }
@@ -360,10 +360,10 @@ function Dashboard() {
             const result = await axios(
                 `https://posapi.gtech.com.pk/api/post/GetDropDownList?api=qTpq3bVFho&Filter=Location` //Endpoint and parameter or base Url
             )
-            
+
 
             setLocationitems(result.data)//sets the data to appear 
-           
+
 
 
         }
@@ -375,10 +375,10 @@ function Dashboard() {
             const result = await axios(
                 `https://posapi.gtech.com.pk/api/post/GetDropDownList?api=qTpq3bVFho&Filter=Category` //Endpoint and parameter or base Url
             )
-            
+
 
             setCategory(result.data)//sets the data to appear 
-           
+
 
 
         }
@@ -390,10 +390,10 @@ function Dashboard() {
             const result = await axios(
                 `https://posapi.gtech.com.pk/api/post/GetDropDownList?api=qTpq3bVFho&Filter=Department` //Endpoint and parameter or base Url
             )
-            
+
 
             setDepartment(result.data)//sets the data to appear 
-           
+
 
         }
         getDepartment()
@@ -403,10 +403,10 @@ function Dashboard() {
             const result = await axios(
                 `https://posapi.gtech.com.pk/api/post/GetDropDownList?api=qTpq3bVFho&Filter=CoBrand` //Endpoint and parameter or base Url
             )
-            
+
 
             setCoBrand(result.data)//sets the data to appear 
-           
+
 
         }
         getCoBrand()
@@ -476,25 +476,16 @@ function Dashboard() {
             setTimeout(() => {
                 Filter();
             }, 2280000);
-            setTimeout(() => {
-                Filter();
-            }, 2400000);
-            setTimeout(() => {
-                Filter();
-            }, 2520000);
-            setTimeout(() => {
-                Filter();
-            }, 2640000);
-            setTimeout(() => {
-                Filter();
-            }, 2760000);
-            setTimeout(() => {
-                Filter();
-            }, 2880000);
-            setTimeout(() => {
-                Filter();
-            }, 3000000);
         }
+
+        // session over
+
+        // setTimeout(() => {
+        //     navigate('/Login');
+        // }, 2280000);
+
+
+
     }, [])//when we use useEffect we put dependency as a second paramers
 
 
@@ -563,7 +554,7 @@ function Dashboard() {
                                                             </div>
                                                             <div className="mail-contnet">
                                                                 <h4>
-                                                                 Lorem Ipsum
+                                                                    Lorem Ipsum
                                                                     <small><i className="fa fa-clock-o"></i> </small>
                                                                 </h4>
                                                                 <span></span>
@@ -793,7 +784,7 @@ function Dashboard() {
                             <div className="cont">
                                 <div className="contain containMobile">
                                     <div className='myTbl' >
-                                        <h3 className="page-title mar">Summary</h3>
+                                        <h3 className="page-title mar" style={{ paddingTop: '15px', paddingLeft: '20px' }}>Summary</h3>
                                         <hr className="mx-1 " />
                                         <Summary isLoading={isLoading} items={items} monthlynetSale={monthlynetSale} previousYearMonthnetSale={previousYearMonthnetSale} />
                                     </div>

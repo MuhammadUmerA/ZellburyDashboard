@@ -118,7 +118,7 @@ function Production({ isLoading, itemsProduction, ProductionValueHook, Productio
                 <div className="row">
                     <div className="col-md-12 col-sm-12" >
                         <div className="view">
-                            <div className="wrapper">
+                          
                                 <table className="table  table-hover table-bordered" id="ProductionYear-table-to-xls">
                                     <thead id="tom">
                                         <tr>
@@ -170,7 +170,12 @@ function Production({ isLoading, itemsProduction, ProductionValueHook, Productio
                                             </tr>
                                         ))}
 
-                                        <tr id="total-border">  
+                                        
+
+
+                                    </tbody>
+                                    <tfoot>
+                                    <tr >  
                                             <td className="sticky-col first-col" id="color">Total</td>
 
                                             <td id="color" style={{ textAlign: "center" }}>{(idSum).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
@@ -191,14 +196,13 @@ function Production({ isLoading, itemsProduction, ProductionValueHook, Productio
 
 
                                         </tr>
-
-
-                                    </tbody>
+                                    </tfoot>
                                 </table>
 
 
-                            </div>
+                            
                         </div>
+                        <hr className="new1"/>
                     </div>
 
                 </div>

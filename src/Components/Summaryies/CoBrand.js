@@ -115,7 +115,7 @@ function CoBrand({ isLoading, itemsCoBrand, CoBrandlabelHook, CoBrandValueHook }
                 <div className="row">
                     <div className="col-md-12 col-sm-12" >
                         <div className="view">
-                            <div className="wrapper">
+                           
                                 <table className="table  table-hover table-bordered" id="CoBrand-table-to-xls">
                                     <thead id="tom">
                                         <tr>
@@ -167,7 +167,12 @@ function CoBrand({ isLoading, itemsCoBrand, CoBrandlabelHook, CoBrandValueHook }
                                                 {/* <td className="text-center ind">{item.reduce((acc, curr) => acc + curr.today, 0)}</td> */}
                                             </tr>
                                         ))}
-                                          <tr id="total-border">
+                                    
+
+
+                                    </tbody>
+                                    <tfoot>
+                                    <tr >
                                             <td className="sticky-col first-col" id="color">Total</td>
 
                                             <td id="color" style={{ textAlign: "center" }}>{(idSum).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
@@ -188,15 +193,14 @@ function CoBrand({ isLoading, itemsCoBrand, CoBrandlabelHook, CoBrandValueHook }
 
                                         </tr>
 
-
-
-                                    </tbody>
+                                    </tfoot>
                                 </table>
 
 
 
-                            </div>
+                            
                         </div>
+                        <hr className="new1"/>
                     </div>
 
                 </div>

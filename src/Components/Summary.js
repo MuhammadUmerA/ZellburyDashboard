@@ -82,7 +82,7 @@ function Summary({ items, isLoading, previousYearMonthnetSale, monthlynetSale })
             {/* table */}
 
             <div className="row">
-                <div className="col-md-8 col-sm-12" >
+                <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8" >
                     <div className="dt-buttons btn-group " style={{ marginTop: '20px' }}>
                         <button className="btn btn-secondary buttons-copy buttons-html5" tabIndex={0} aria-controls="DataTables_Table_0" onClick={copyTable}><span>Copy</span></button>
                         <CSVLink {...csvReport}>  <button className="btn btn-secondary buttons-csv buttons-html5" tabIndex={0} aria-controls="DataTables_Table_0"><span>CSV</span></button></CSVLink>
@@ -167,7 +167,7 @@ function Summary({ items, isLoading, previousYearMonthnetSale, monthlynetSale })
 
                 {/* chart */}
 
-                <div className='col-md-4 col-sm-12 mobile-margin'>
+                <div className='col-md-4 col-sm-12 mobile-margin '>
                     <div className=" mb-5" id="MobNone">
                         <Chart
                             type="bar"
@@ -220,11 +220,11 @@ function Summary({ items, isLoading, previousYearMonthnetSale, monthlynetSale })
                             }}
                         ></Chart>
                     </div>
-                    <div className=" mb-5" id="PcNone">
+                    <div className="container mb-5 " id="PcNone">
                         <br />
                         <Chart
                             type="bar"
-                            width={435}
+                            width={420}
                             height={420}
                             series={[
                                 {

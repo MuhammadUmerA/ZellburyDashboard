@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import Chart from "react-apexcharts";
-import axios from 'axios'
-import { CSVLink } from "react-csv";
-import ReactHTMLTableToExcel from 'react-html-table-to-excel';
-// import { CopyToClipboard } from 'react-copy-to-clipboard';
+import React from "react"
+// import React, { useState, useEffect } from "react";
+// import Chart from "react-apexcharts";
+// import axios from 'axios'
+// import { CSVLink } from "react-csv";
+// import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 
 function Top() {
 

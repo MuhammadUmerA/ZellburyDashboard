@@ -14,71 +14,16 @@ body {
 }
 
 
-
-.view {
-  width: 100%;
-}
-
-/* th,
-td {
-  margin: 0px 2px 0px 2px !important;
-} */
-
-
-.wrapper {
-  /* position: relative; */
-  overflow-x: auto;
-  /* white-space: nowrap; */
-  background-color: white !important;
-}
-
-.sticky-col {
-  position: -webkit-sticky;
-  position: sticky;
-
-}
-
-.coltm4 {
-  background-color: #313b3f !important;
-  color: white;
-  font-weight: bold;
-  text-align: center;
-}
-
-.ak {
-  width: 1px !important;
-  background-color: white !important;
-}
-
-.first-col {
-  left: 0px;
-  z-index: 0 !important;
-  background-color: white !important;
-
-}
-
-.first-col2 {
-  left: 0px;
-  z-index: 0 !important;
-
-
-}
-
-
-
-/* .ind {
- 
-
-} */
-
 @media screen and (max-width: 480px) {
 
-.m-mob{
-  margin-bottom: 7px !important;
-}
-.cont-mobile{
-  padding: 10px 4px 0px 4px;
-}
+  .m-mob {
+    margin-bottom: 7px !important;
+  }
+
+  .cont-mobile {
+    padding: 10px 4px 0px 4px;
+  }
+
   .first-col {
     font-weight: bold;
   }
@@ -88,8 +33,13 @@ td {
     display: none;
   }
 
+  .PcNone {
+    display: none;
+  }
+
   .mobile-margin {
-    margin-top: 29px;
+    margin: 29px auto 0px auto;
+    /* margin-top: 29px; */
   }
 
   .alien {
@@ -108,10 +58,6 @@ td {
   .mobile {
     display: none;
   }
-
-  /* .mar{
-    margin-top: 50px !important;
-  } */
 
   .FirstFlex {
     justify-content: space-around;
@@ -214,11 +160,16 @@ small {
   color: rgb(29, 29, 155) !important;
   font-weight: bold;
   font-size: 16px !important;
+  /* border-top: 2px solid rgb(29, 29, 155); */
 }
 
 @media screen and (min-width: 480px) {
 
   #MobNone {
+    display: none;
+  }
+
+  .MobNone {
     display: none;
   }
 
@@ -469,9 +420,40 @@ tr:first-child {
   font-size: 14px;
 }
 
-#total-border {
+/* #total-border {
   border-top: 2px solid rgb(29, 29, 155);
-}
+} */
+
 .form_Background {
   background-color: rgba(51, 47, 47, 0.907) !important;
+}
+
+.PcTotal {
+  display: flex;
+}
+
+.LocationTotal {
+  width: 330px;
+  height: 20px;
+  background-color: #3E8EF7;
+}
+.TodayTotal {
+  width: 330px;
+  height: 20px;
+  background-color: aqua;
+}
+.YesterdayTotal {
+  width: 330px;
+  height: 20px;
+  background-color: brown;
+}
+.LocationTotal {
+  width: 330px;
+  height: 20px;
+  background-color: #3E8EF7;
+}
+hr.new1 {
+  position: relative;
+  bottom: 73px;
+  border: 2px solid rgb(29, 29, 155);
 }
